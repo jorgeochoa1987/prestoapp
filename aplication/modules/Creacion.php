@@ -24,7 +24,7 @@ if (isset($_POST['save'])) {
         Creado la cartera de "'.$name.'"
         <p>valor por:"'.$valIni.'" </p>
         </div>';
-        header('Location: http://localhost/prestoapp/aplication/listarcliente.php');
+        header('Location: /aplication/listarcartera.php');
         
 
   	}else {

@@ -38,10 +38,11 @@ if(!isset($_SESSION['usuario']) and $_SESSION['estado'] != 'Autenticado') {
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <style>
   @media (max-width: 500px){ 
-.promo-popup.hidden {
-    bottom: -536px!important;
- 
-}}
+    .promo-popup.hidden {
+    bottom: -74% !important;
+   
+}
+}
   </style>
    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.snow.css"> </head>
@@ -92,7 +93,7 @@ if(!isset($_SESSION['usuario']) and $_SESSION['estado'] != 'Autenticado') {
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="listarcliente.php">
+                <a class="nav-link " href="listarcartera.php">
                   <i class="material-icons">format_align_left</i>
                   <span>Listar Cartera</span>
                 </a>
