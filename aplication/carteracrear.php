@@ -63,8 +63,7 @@ include('header.php');
                                 <label for="feDescription">Notas adicionales</label>
                                 <textarea class="form-control" name="feDescription" rows="5"></textarea>
                               </div>
-                              <button type="submit" class="btn btn-accent">Crear cliente</button>
-
+                              <button type="submit" class="btn btn-accent">Cartera</button>
                             </div>
                           </form>
                         </div>
