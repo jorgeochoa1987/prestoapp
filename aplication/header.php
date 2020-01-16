@@ -87,7 +87,7 @@ if(!isset($_SESSION['usuario']) and $_SESSION['estado'] != 'Autenticado') {
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="listarcliente.php">
+                <a class="nav-link " href="carteracrear.php">
                   <i class="material-icons">account_balance_wallet</i>
                   <span>Nueva cartera</span>
                 </a>
