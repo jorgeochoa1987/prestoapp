@@ -38,6 +38,7 @@ include('header.php');
                   </ul>
                 </div>
               </div>
+              <form>
               <div class="col-lg-7">
                 <div class="card card-small mb-4">
                   <div class="card-header border-bottom">
@@ -47,7 +48,7 @@ include('header.php');
                     <li class="list-group-item p-3">
                       <div class="row">
                         <div class="col">
-                          <form>
+                          
                             <div class="form-row">
                               <div class="form-group col-md-6">
                                 <label for="feFirstName">Nombre</label>
@@ -62,7 +63,7 @@ include('header.php');
                                 <input type="email" class="form-control" id="feEmailAddress" placeholder="Email" value="sierra@example.com"> </div>
                               <div class="form-group col-md-6">
                               <label for="feInputAddress">Teléfono</label>
-                              <input type="text" class="form-control" id="feInputAddress" placeholder="Ingrese teléfono"> </div>
+                              <input type="text" class="form-control" id="fephone" placeholder="Ingrese teléfono"> </div>
                             </div>
                             <div class="form-group">
                               <label for="feInputAddress">Dirección</label>
@@ -72,16 +73,19 @@ include('header.php');
                               <div class="form-group col-md-6">
                                 <label for="feInputCity">Ciudad</label>
                                 <input type="text" class="form-control" id="feInputCity"> </div>
+                                <div class="form-group col-md-6">
+                                <label for="feInputCity">Cédula</label>
+                                <input type="text" class="form-control" id="fenumber"> </div>
                              </div>
                         
                             <div class="form-row">
                               <div class="form-group col-md-12">
                                 <label for="feDescription">Notas adicionales</label>
-                                <textarea class="form-control" name="feDescription" rows="5"></textarea>
+                                <textarea class="form-control" name="fenotes" id="fenotes" rows="5"></textarea>
                               </div>
                             </div>
-                            <button type="submit" class="btn btn-accent">Crear cliente</button>
-                          </form>
+                            <button type="submit" id="crearCliente" class="btn btn-accent">Crear cliente</button>
+
                         </div>
                       </div>
                     </li>
@@ -96,32 +100,32 @@ include('header.php');
                     <ul class="list-group list-group-flush">
                       <li class="list-group-item px-3 pb-2">
                         <div class="custom-control custom-checkbox mb-1">
-                          <input type="checkbox" class="custom-control-input" id="category1" checked>
+                          <input type="checkbox" class="custom-control-input" id="category1" value="1" checked>
                           <label class="custom-control-label" for="category1">Lunes</label>
                         </div>
                         <div class="custom-control custom-checkbox mb-1">
-                          <input type="checkbox" class="custom-control-input" id="category2" >
+                          <input type="checkbox" class="custom-control-input" value="1"  id="category2" >
                           <label class="custom-control-label" for="category2">Martes</label>
                         </div>
                         <div class="custom-control custom-checkbox mb-1">
-                          <input type="checkbox" class="custom-control-input" id="category3">
+                          <input type="checkbox" class="custom-control-input" value="1"   id="category3">
                           <label class="custom-control-label" for="category3">Miercoles</label>
                         </div>
                         <div class="custom-control custom-checkbox mb-1">
-                          <input type="checkbox" class="custom-control-input" id="category4">
+                          <input type="checkbox" class="custom-control-input" value="1"   id="category4">
                           <label class="custom-control-label" for="category4">Jueves</label>
-                        </div>
+                        </div> 
                         <div class="custom-control custom-checkbox mb-1">
-                          <input type="checkbox" class="custom-control-input" id="category5">
+                          <input type="checkbox" class="custom-control-input" value="1"  id="category5">
                           <label class="custom-control-label" for="category5">Viernes</label>
                         </div>
                         <div class="custom-control custom-checkbox mb-1">
-                          <input type="checkbox" class="custom-control-input" id="category6">
-                          <label class="custom-control-label" for="category5">Sabado</label>
+                          <input type="checkbox" class="custom-control-input" value="1"  id="category6">
+                          <label class="custom-control-label" for="category6">Sabado</label>
                         </div>
                         <div class="custom-control custom-checkbox mb-1">
-                          <input type="checkbox" class="custom-control-input" id="category7">
-                          <label class="custom-control-label" for="category5">Domingo</label>
+                          <input type="checkbox" class="custom-control-input" value="1"  id="category7">
+                          <label class="custom-control-label" for="category7">Domingo</label>
                         </div>
                       </li>
                       <li class="list-group-item d-flex px-3">
@@ -132,7 +136,7 @@ include('header.php');
                 </div>
             </div>
             <!-- End Page Header -->
-           
+           </form>
           </div>
           <?php
          include('footer.php');

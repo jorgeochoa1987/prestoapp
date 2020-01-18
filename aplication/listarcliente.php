@@ -24,46 +24,38 @@ include('header.php');
                       <thead class="bg-light">
                         <tr>
                           <th scope="col" class="border-0">#</th>
-                          <th scope="col" class="border-0">First Name</th>
-                          <th scope="col" class="border-0">Last Name</th>
-                          <th scope="col" class="border-0">Country</th>
-                          <th scope="col" class="border-0">City</th>
-                          <th scope="col" class="border-0">Phone</th>
+                          <th scope="col" class="border-0">Nombre</th>
+                          <th scope="col" class="border-0">Apellido</th>
+                          <th scope="col" class="border-0">Dirección</th>
+                          <th scope="col" class="border-0">Teléfono</th>
+                          <th scope="col" class="border-0">Correo</th>
+                          <th scope="col" class="border-0">Favorito</th>
+                          <th scope="col" class="border-0">Modificar</th>
+                          <th scope="col" class="border-0">Eliminar</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td>1</td>
-                          <td>Ali</td>
-                          <td>Kerry</td>
-                          <td>Russian Federation</td>
-                          <td>Gdańsk</td>
-                          <td>107-0339</td>
-                        </tr>
-                        <tr>
-                          <td>2</td>
-                          <td>Clark</td>
-                          <td>Angela</td>
-                          <td>Estonia</td>
-                          <td>Borghetto di Vara</td>
-                          <td>1-660-850-1647</td>
-                        </tr>
-                        <tr>
-                          <td>3</td>
-                          <td>Jerry</td>
-                          <td>Nathan</td>
-                          <td>Cyprus</td>
-                          <td>Braunau am Inn</td>
-                          <td>214-4225</td>
-                        </tr>
-                        <tr>
-                          <td>4</td>
-                          <td>Colt</td>
-                          <td>Angela</td>
-                          <td>Liberia</td>
-                          <td>Bad Hersfeld</td>
-                          <td>1-848-473-7416</td>
-                        </tr>
+                        
+                      <?php 
+                          require('../conex/conexion.php');
+                          $query="SELECT * FROM cliente where estado != 1 ";
+                          $answer = $conexion -> query($query);
+                          while ($row=$answer->fetch_assoc()){
+                          ?>
+                          <tr>
+                              <td> <?php echo $row['id']; ?></td>
+                              <td> <?php echo $row['nombre']; ?></td>
+                              <td> <?php echo $row['apellido']; ?></td>
+                              <td> <?php echo $row['direccion']; ?></td>
+                              <td> <?php echo $row['telefono']; ?></td>
+                              <td> <?php echo $row['correo']; ?></td>
+                              <td> <?php echo $row['favorito']; ?></td>
+                              <td> <a href="modCliente.php?id=<?php echo $row ['id'];?>">Modificar </a></td>
+                              <td> <a href="#">Eliminar </a></td>
+                          </tr>
+                          <?php 
+                          }
+                          ?>
                       </tbody>
                     </table>
                   </div>
@@ -81,48 +73,39 @@ include('header.php');
                   <div class="card-body p-0 pb-3 bg-dark text-center">
                     <table class="table table-dark mb-0">
                       <thead class="thead-dark">
-                        <tr>
-                          <th scope="col" class="border-bottom-0">#</th>
-                          <th scope="col" class="border-bottom-0">First Name</th>
-                          <th scope="col" class="border-bottom-0">Last Name</th>
-                          <th scope="col" class="border-bottom-0">Country</th>
-                          <th scope="col" class="border-bottom-0">City</th>
-                          <th scope="col" class="border-bottom-0">Phone</th>
+                      <tr>
+                          <th scope="col" class="border-0">#</th>
+                          <th scope="col" class="border-0">Nombre</th>
+                          <th scope="col" class="border-0">Apellido</th>
+                          <th scope="col" class="border-0">Dirección</th>
+                          <th scope="col" class="border-0">Teléfono</th>
+                          <th scope="col" class="border-0">Correo</th>
+                          <th scope="col" class="border-0">Favorito</th>
+                          <th scope="col" class="border-0">Modificar</th>
+                          <th scope="col" class="border-0">Eliminar</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td>1</td>
-                          <td>Graham</td>
-                          <td>Brent</td>
-                          <td>Benin</td>
-                          <td>Ripabottoni</td>
-                          <td>1-512-760-9094</td>
-                        </tr>
-                        <tr>
-                          <td>2</td>
-                          <td>Clark</td>
-                          <td>Angela</td>
-                          <td>Estonia</td>
-                          <td>Borghetto di Vara</td>
-                          <td>1-660-850-1647</td>
-                        </tr>
-                        <tr>
-                          <td>3</td>
-                          <td>Wylie</td>
-                          <td>Joseph</td>
-                          <td>Korea, North</td>
-                          <td>Guelph</td>
-                          <td>325-4351</td>
-                        </tr>
-                        <tr>
-                          <td>4</td>
-                          <td>Garth</td>
-                          <td>Clementine</td>
-                          <td>Indonesia</td>
-                          <td>Narcao</td>
-                          <td>722-8264</td>
-                        </tr>
+                      <?php 
+                          require('../conex/conexion.php');
+                          $query="SELECT * FROM cliente where estado = 1 ";
+                          $answer = $conexion -> query($query);
+                          while ($row=$answer->fetch_assoc()){
+                          ?>
+                          <tr>
+                              <td> <?php echo $row['id']; ?></td>
+                              <td> <?php echo $row['nombre']; ?></td>
+                              <td> <?php echo $row['apellido']; ?></td>
+                              <td> <?php echo $row['direccion']; ?></td>
+                              <td> <?php echo $row['telefono']; ?></td>
+                              <td> <?php echo $row['correo']; ?></td>
+                              <td> <?php echo $row['favorito']; ?></td>
+                              <td> <a href="modCliente.php?id=<?php echo $row ['id'];?>">Modificar </a></td>
+                              <td> <a href="#">Eliminar </a></td>
+                          </tr>
+                          <?php 
+                          }
+                          ?>
                       </tbody>
                     </table>
                   </div>

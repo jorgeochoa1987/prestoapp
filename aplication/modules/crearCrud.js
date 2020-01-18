@@ -1,5 +1,6 @@
 $(document).ready(function(){
     $(document).on('click', '#crearCartera', function(){
+
         // Capturo los id de  los inputs y los paso a la variables para que procese
       var name = $('#feFirstName').val();
       var lastname = $('#feLastName').val();
@@ -35,4 +36,57 @@ $(document).ready(function(){
         }
       });
     });
+
+    $(document).on('click', '#crearCliente', function(){
+      // Capturo los id de  los inputs y los paso a la variables para que procese
+//alert('entre a crear cliente');
+    var name = $('#feFirstName').val();
+    var lastname = $('#feLastName').val();
+    var email = $('#feEmailAddress').val();
+    var phone = $('#fephone').val();
+    var city = $('#feInputCity').val();
+    var number = $('#fenumber').val();
+    var address = $('#feInputAddress').val();
+    var notes = $('#fenotes').val();
+    var category1= $('#category1').val();
+    var category2= $('#category2').val();
+    var category3= $('#category3').val();
+    var category4= $('#category4').val();
+    var category5= $('#category5').val();
+    var category6= $('#category6').val();
+    var category7= $('#category7').val();
+    $.ajax({
+      url: 'modules/CreacionCliente.php',
+      type: 'POST',
+      data: {
+        'save': 1,
+        'name': name,
+        'lastname':lastname,
+        'address':address,
+        'email':email,
+        'phone':phone,
+        'city':city,
+        'number':number,
+        'notes': notes,
+        'category1':category1,
+        'category2':category2,
+        'category3':category3,
+        'category4':category4,
+        'category5':category5,
+        'category6':category6,
+        'category7':category7,
+      },
+      success: function(response){
+        $('#feFirstName').val('');
+        $('#feLastName').val('');
+        $('#feNumber').val('');
+        $('#feValIni').val('');
+        $("#Respuesta").html(response);
+        alert('Acción realizada '+ response);
+        
+      }
+    });
+  });
+
+    
 });
