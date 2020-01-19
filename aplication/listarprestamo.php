@@ -23,12 +23,21 @@ include('header.php');
                           $answer = $conexion -> query($query);
                          
                           while ($row=$answer->fetch_assoc()){
-                          ?>
+                          ?> 
+                         <?php   $id =  $row['id']; ?>
                           <div class="row">
               <div class="col">
                 <div class="card card-small mb-4">
                   <div class="card-header border-bottom">
-                    <h6 class="m-0">Cartera de :  <?php echo $row['nombre']; ?>  <?php echo $row['id']; ?> </h6>
+                    <h6 class="m-0">Cartera de :  <?php echo $row['nombre']; ?>  Cédula: id: <?php echo $row['cedula']; ?>  </h6> 
+                    <h6 class="m-0" style="float: right;" >Monto por cobrar :  <?php  $query3="SELECT sum(c.prestamo) as moneysum FROM cuenta as c  join cliente as cl  on c.id_cliente = cl.id where id_prestamista =  $id ";
+                          $answer3 = $conexion -> query($query3);   while ($row3=$answer3->fetch_assoc()){
+                            ?>  <?php echo $row3['moneysum']; echo' Sin interes' ; ?> </h6>
+                            <?php 
+                          }
+
+                      ?>
+
                   </div>
                   <div class="card-body p-0 pb-3 text-center">
                     <table class="table mb-0">
@@ -39,23 +48,41 @@ include('header.php');
                           <th scope="col" class="border-0">Apellido</th>
                           <th scope="col" class="border-0">Telefono</th>
                           <th scope="col" class="border-0">Correo</th>
-                          <th scope="col" class="border-0">Solicitud</th>
-                          <th scope="col" class="border-0">Pago</th>
+                          <th scope="col" class="border-0">Prestado</th>
                           <th scope="col" class="border-0">tipo cobro</th>
+                          <th scope="col" class="border-0">Pagar</th>
                         </tr>
                       </thead>
                       <tbody>
                       <?php 
-                      $id =  $row['id'];
-                      echo $id; 
-                      $query2="SELECT * FROM cuenta group by  id_prestamista = $id";
+                     
+                      $query2="SELECT c.id_cliente as idcliente, c.id as ident, cl.nombre as name, cl.apellido as lastname,sum(c.prestamo) as money,cl.telefono as phone, cl.correo as mail  FROM cuenta as c  join cliente as cl  on c.id_cliente = cl.id where id_prestamista = $id group by c.id_cliente";
                           $answer2 = $conexion -> query($query2);
                          
                           while ($row2=$answer2->fetch_assoc()){
                           ?>
-                           <th scope="col" class="border-0"><?php echo $row2['id']; ?></th>
-                            <th scope="col" class="border-0"><?php echo $row2['prestamo']; ?></th>
+                          <?php
+                          if ( $row2['money'] == 0 )
+                          {
 
+                          }else 
+                          {?>
+                            <tr>
+                            <th scope="col" class="border-0"> <?php echo $row2['ident']; ?></th>
+                            <th scope="col" class="border-0"><?php echo $row2['name']; ?></th>
+                             <th scope="col" class="border-0"><?php echo $row2['lastname']; ?></th>
+                             <th scope="col" class="border-0"><?php echo $row2['phone']; ?></th>
+                             <th scope="col" class="border-0"><?php echo $row2['mail']; ?></th>
+                             <th scope="col" class="border-0"><?php echo $row2['money']; ?></th>
+                             <th scope="col" class="border-0"><?php echo $row2['cobro']; ?></th>
+                             <td> <a class="btn btn-sm btn-success mr-1" href="modpago.php?id=<?php echo $row2 ['idcliente'];?>">Pagar </a></td>
+ 
+                             </tr>
+                             <?php
+                          }
+                         
+                          ?>
+                       
                             <?php 
                           }
                          
