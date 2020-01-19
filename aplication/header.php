@@ -134,6 +134,12 @@ if(!isset($_SESSION['usuario']) and $_SESSION['estado'] != 'Autenticado') {
                 </a>
               </li>
               <li class="nav-item">
+                <a class="nav-link " href="listarprestamo.php">
+                  <i class="material-icons">monetization_on</i>
+                  <span>Listas  prestamos</span>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link " href="listarcliente.php">
                   <i class="material-icons">money_off</i>
                   <span>Prestamos vencidos</span>
