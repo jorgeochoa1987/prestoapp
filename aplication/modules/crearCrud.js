@@ -37,6 +37,7 @@ $(document).ready(function(){
       });
     });
 
+    //crear cliente
     $(document).on('click', '#crearCliente', function(){
       // Capturo los id de  los inputs y los paso a la variables para que procese
 //alert('entre a crear cliente');
@@ -88,5 +89,56 @@ $(document).ready(function(){
     });
   });
 
+//crear prestamo
+
+$(document).on('click', '#crearPrestamo', function(){
+  // Capturo los id de  los inputs y los paso a la variables para que procese
+//alert('entre a crear cliente');
+
+var cartera = $('#fecartera').val();
+var value = $('#feValue').val();
+var interes = $('#feInteres').val();
+var date = $('#feDate').val();
+var notas = $('#feDescription').val();
+var cliente = $('#fecliente').val();
+var category1= $('#category1').val();
+var category2= $('#category2').val();
+var category3= $('#category3').val();
+var category4= $('#category4').val();
+var category5= $('#category5').val();
+var category6= $('#category6').val();
+var category7= $('#category7').val();
+$.ajax({
+  url: 'modules/CreacionPrestamo.php',
+  type: 'POST',
+  data: {
+    'save': 1,
+    'cartera':cartera,
+    'value': value,
+    'interes':interes,
+    'cliente':cliente,
+    'date':date,
+    'notas':notas,
+    'cliente':cliente,
+    'category1':category1,
+    'category2':category2,
+    'category3':category3,
+    'category4':category4,
+    'category5':category5,
+    'category6':category6,
+    'category7':category7,
+  },
+  success: function(response){
+    alert('Acción realizada '+ response);
+
+    $('#feValue').val('');
+    $('#feInteres').val('');
+    $('#fecartera').val('');
+    $('#feDate').val('');
+    $("#Respuesta").html(response);
     
+  }
+});
+});
+ 
 });

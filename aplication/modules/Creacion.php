@@ -16,7 +16,7 @@ if (isset($_POST['save'])) {
       echo '<div class="comment_box" id="Respuesta"> Es Obligatorio llenar la cedula y el valor inicial </div>';
       exit();
     }
-  	$sql = "INSERT INTO `cartera` (`id`, `nombre`, `Apellido`, `cedula`, `correo`, `telefono`, `ciudad`, `direccion`, `valorIni`, `notasAdicionales`)  VALUES (NULL, '$name', '$lastname', '$number', '$email', '$phone', '$city', ' $address', '$valIni', '$notes');";
+  	$sql = "INSERT INTO `cartera` (`id`, `nombre`, `Apellido`, `cedula`, `correo`, `telefono`, `ciudad`, `direccion`, `valorIni`, `notasAdicionales`, `saldo`)  VALUES (NULL, '$name', '$lastname', '$number', '$email', '$phone', '$city', ' $address', '$valIni', '$notes', '$valIni');";
   	if (mysqli_query($conexion, $sql)) {
   	  $id = mysqli_insert_id($conexion);
     
