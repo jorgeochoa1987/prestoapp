@@ -12,7 +12,6 @@ include('header.php');
                 <h3 class="page-title">Nuevo cliente</h3>
               </div>
             </div>
-            <form>
             <div class="row">
               <div class="col-lg-2">
                 <div class="card card-small mb-4 pt-3">
@@ -38,7 +37,6 @@ include('header.php');
                   </ul>
                 </div>
               </div>
-              <form>
               <div class="col-lg-7">
                 <div class="card card-small mb-4">
                   <div class="card-header border-bottom">
@@ -52,15 +50,15 @@ include('header.php');
                             <div class="form-row">
                               <div class="form-group col-md-6">
                                 <label for="feFirstName">Nombre</label>
-                                <input type="text" class="form-control" id="feFirstName" placeholder="First Name" value="Ingrese nombre"> </div>
+                                <input type="text" class="form-control" id="feFirstName" placeholder="Ingrese nombre" value=""> </div>
                               <div class="form-group col-md-6">
                                 <label for="feLastName">Apellido</label>
-                                <input type="text" class="form-control" id="feLastName" placeholder="Last Name" value="Ingrese apellido"> </div>
+                                <input type="text" class="form-control" id="feLastName" placeholder="Ingrese apellido" value=""> </div>
                             </div>
                             <div class="form-row">
                               <div class="form-group col-md-6">
                                 <label for="feEmailAddress">Correo</label>
-                                <input type="email" class="form-control" id="feEmailAddress" placeholder="Email" value="sierra@example.com"> </div>
+                                <input type="email" class="form-control" id="feEmailAddress" placeholder="Correo@correo.com" value=""> </div>
                               <div class="form-group col-md-6">
                               <label for="feInputAddress">Teléfono</label>
                               <input type="text" class="form-control" id="fephone" placeholder="Ingrese teléfono"> </div>
@@ -72,10 +70,10 @@ include('header.php');
                               
                               <div class="form-group col-md-6">
                                 <label for="feInputCity">Ciudad</label>
-                                <input type="text" class="form-control" id="feInputCity"> </div>
+                                <input type="text" class="form-control" id="feInputCity" placeholder="Ingrese Ciudad"> </div>
                                 <div class="form-group col-md-6">
                                 <label for="feInputCity">Cédula</label>
-                                <input type="text" class="form-control" id="fenumber"> </div>
+                                <input type="text" class="form-control" id="fenumber" placeholder="Ingrese cédula"> </div>
                              </div>
                         
                             <div class="form-row">

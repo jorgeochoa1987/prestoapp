@@ -9,6 +9,7 @@ if(!isset($_SESSION['usuario']) and $_SESSION['estado'] != 'Autenticado') {
     header('Location: index.php');
     $nombre = $_SESSION['usuario'];
 } else {
+  $id = $_SESSION['id'];
   $estado = $_SESSION['usuario'];
   $nombreApe = $_SESSION['nombreapellido'];
   $foto = $_SESSION['foto'];
@@ -31,6 +32,9 @@ if(!isset($_SESSION['usuario']) and $_SESSION['estado'] != 'Autenticado') {
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" id="main-stylesheet" data-version="1.1.0" href="styles/shards-dashboards.1.1.0.min.css">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/css/bootstrap-select.min.css'>
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
     
     <link rel="stylesheet" href="styles/extras.1.1.0.min.css">
     <script async defer src="https://buttons.github.io/buttons.js"></script>
@@ -180,11 +184,11 @@ if(!isset($_SESSION['usuario']) and $_SESSION['estado'] != 'Autenticado') {
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle text-nowrap px-3" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                    <img class="user-avatar rounded-circle mr-2" src="../images/<?php  echo $foto ;?>" alt="User Avatar">
+                    <img class="user-avatar rounded-circle mr-2" src="../images/<?php  echo $foto ;?>" alt="Usuario">
                     <span class="d-none d-md-inline-block"><?php echo  $nombreApe; ?></span>
                   </a>
                   <div class="dropdown-menu dropdown-menu-small">
-                    <a class="dropdown-item" href="user-profile.php">
+                    <a class="dropdown-item" href="user-profile.php?id=<?php echo $id; ?> ">
                       <i class="material-icons">&#xE7FD;</i> Mi perfil</a>
                     
                     <div class="dropdown-divider"></div>

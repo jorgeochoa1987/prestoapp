@@ -10,8 +10,8 @@ if (isset($_POST['save'])) {
 
     if($value=='' )
     {
-      echo '<div class="comment_box" id="Respuesta"> Es Obligatorio llenar la valor y asignar cartera </div>';
-      exit();
+      $Respuesta =  "Es obligatorio tener un valor" ;
+      echo $Respuesta;      exit();
     }
   	$sql = "INSERT INTO `cuenta` (`id`, `id_cliente`, `id_prestamista`, `prestamo`, `fecha_prestamo`, `interes`, `fechaVisita1`) VALUES (NULL, '$cliente ', '$cartera', '$value', current_timestamp(), '$interes', '$date');";
   	if (mysqli_query($conexion, $sql)) {
@@ -21,11 +21,12 @@ if (isset($_POST['save'])) {
         Creado la cartera de "'.$name.'"
         <p>valor por:"'.$valIni.'" </p>
         </div>';
-        header('Location: /aplication/listarcartera.php');
         
 
   	}else {
-  	  echo "Error: ". mysqli_error($conexion);
+      $Respuesta =  "Error: ". mysqli_error($conexion); ;
+      echo $Respuesta;
+  	  
   	}
   	exit();
   }

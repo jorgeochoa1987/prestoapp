@@ -57,7 +57,6 @@ include('header.php');
                
               </div>
             </div>
-            <form>
             <div class="row">
               <div class="col-lg-7">
                 <div class="card card-small mb-4">
@@ -69,7 +68,6 @@ include('header.php');
                     <li class="list-group-item p-3">
                       <div class="row">
                         <div class="col">
-                          <form>
                             <div class="form-row">
                               <div class="form-group col-md-6">
                                 <label for="feFirstName">Nombre</label>
@@ -84,17 +82,17 @@ include('header.php');
                                 <input type="email" class="form-control" id="feEmailAddress" placeholder="Ingrese correo" value=""> </div>
                               <div class="form-group col-md-6">
                               <label for="feInputAddress">Teléfono</label>
-                              <input type="text" class="form-control" id="fePhone" placeholder="Ingrese teléfono"> </div>
+                              <input type="text" class="form-control" id="fePhone" placeholder="Ingrese teléfono" value=""> </div>
                             </div>
                             <div class="form-row">
                               
                               <div class="form-group col-md-6">
                                 <label for="feInputCity">Ciudad</label>
-                                <input type="text" class="form-control" id="feInputCity"> </div>
+                                <input type="text" class="form-control" id="feInputCity" placeholder="Ingrese Ciudad"> </div>
 
                                 <div class="form-group col-md-6">
                                 <label for="feInputCity">Cédula</label>
-                                <input type="number" class="form-control" id="feNumber"> </div>
+                                <input type="number" class="form-control" id="feNumber" placeholder="Ingrese Cédula"> </div>
                              
                              </div>    
                             <div class="form-group">
@@ -111,13 +109,12 @@ include('header.php');
                               </div>
                               <button type="submit" id="crearCartera" class="btn btn-accent">Nueva cartera</button>
                             </div>
-                          </form>
                         </div>
                       </div>
                     </li>
                   </ul>
                 </div>
-              </div>
+              </div> 
             
             <!-- End Page Header -->
            

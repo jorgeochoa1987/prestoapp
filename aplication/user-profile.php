@@ -1,24 +1,19 @@
 <?php 
 include('header.php');
+
 ?>
           <!-- / .main-navbar -->
-          <div class="alert alert-success alert-dismissible fade show mb-0" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-            <i class="fa fa-check mx-2"></i>
-            <strong></strong>  </div>
+         
           <div class="main-content-container container-fluid px-4">
             <!-- Page Header -->
             <div class="page-header row no-gutters py-4">
               <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
                 <span class="text-uppercase page-subtitle">Información</span>
-                <h3 class="page-title">cuenta de usuario</h3>
+                <h3 class="page-title">cuenta de usuario  <?php   $id = $_GET['id']; echo $id; ?></h3>
               </div>
             </div>
             <!-- End Page Header -->
-            <!-- Default Light Table
-           -->
+          
             <div class="row">
               <div class="col-lg-4">
                 <div class="card card-small mb-4 pt-3">
@@ -30,16 +25,39 @@ include('header.php');
                     <button type="button"  class="mb-2 btn btn-sm btn-pill btn-outline-primary mr-2">
                       <i class="material-icons mr-1">person_add</i>Cambiar foto</button>
                   </div>
+                
                   <ul class="list-group list-group-flush">
                     <li class="list-group-item px-4">
                       <div class="progress-wrapper">
-                        <strong class="text-muted d-block mb-2">Mi cartera</strong>
+                        <strong class="text-muted d-block mb-2">Mi Cartera inicial</strong>
                         <div class="progress progress-sm">
-                          <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100" style="width: 74%;">
-                            <span class="progress-value">$ 2'000.000</span>
+                        <?php
+                          require('../conex/conexion.php');
+                          $id = $_GET['id']; 
+                          $query2="SELECT * FROM cartera  where id = $id ";
+                          $answer2 = $conexion -> query($query2);
+                          while ($row2=$answer2->fetch_assoc()){
+                          ?> 
+                          <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100" style="width:<?php echo $row2['saldo'] * 100 /$row2['valorIni'] ; ?>%;">
+                            <span class="progress-value">$   <?php echo $row2['valorIni']; ?> 
+                           
+                          </span>
                           </div>
                         </div>
                       </div>
+                    </li>
+                    <li class="list-group-item px-4">
+                      <div class="progress-wrapper">
+                        <strong class="text-muted d-block mb-2">Mi cartera Recaudada</strong>
+                        <div class="progress progress-sm">
+                          <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100" style="width: 74%;">
+                            <span class="progress-value">$<?php echo $row2['saldo'] ; ?></span>
+                          </div>
+                        </div>
+                      </div>
+                      <?php 
+                        }
+                        ?>
                     </li>
                     <li class="list-group-item p-4">
                     </li>
@@ -55,42 +73,38 @@ include('header.php');
                     <li class="list-group-item p-3">
                       <div class="row">
                         <div class="col">
-                          <form>
+                        <?php
+                         
+                         $id = $_GET['id']; 
+                          $query1="SELECT * FROM users  where id = $id ";
+                          $answer1 = $conexion -> query($query1);
+                          while ($row1=$answer1->fetch_assoc()){
+                          ?>
+                          
                             <div class="form-row">
                               <div class="form-group col-md-6">
                                 <label for="feFirstName">Nombre </label>
-                                <input type="text" class="form-control" id="feFirstName" placeholder="First Name" value="Sierra"> </div>
+                                <input type="text" class="form-control" id="feFirstName" placeholder="Primer nombre" value="<?php echo $row1['nombreApellido']; ?>"> </div>
                               <div class="form-group col-md-6">
-                                <label for="feLastName">Apellido</label>
-                                <input type="text" class="form-control" id="feLastName" placeholder="Last Name" value="Brooks"> </div>
+                                <label for="feLastName">Usuario</label>
+                                <input type="text" class="form-control" id="feLastName" placeholder="Usuario" value="<?php echo $row1['usuario']; ?>"> </div>
                             </div>
                             <div class="form-row">
                               <div class="form-group col-md-6">
                                 <label for="feEmailAddress">Correo</label>
-                                <input type="email" class="form-control" id="feEmailAddress" placeholder="Email" value="sierra@example.com"> </div>
+                                <input type="email" class="form-control" id="feEmailAddress" placeholder="Email" value="<?php echo $row1['correo']; ?>"> </div>
                               <div class="form-group col-md-6">
                                 <label for="fePassword">Contraseña</label>
-                                <input type="password" class="form-control" id="fePassword" placeholder="Password"> </div>
+                                <input type="password" class="form-control" id="fePassword" value="<?php echo $row1['contrasenia']; ?>"> </div>
                             </div>
-                            <div class="form-group">
-                              <label for="feInputAddress">Dirección</label>
-                              <input type="text" class="form-control" id="feInputAddress" placeholder="1234 Main St"> </div>
-                            <div class="form-row">
-                              <div class="form-group col-md-6">
-                                <label for="feInputCity">Ciudad</label>
-                                <input type="text" class="form-control" id="feInputCity"> 
-                    
-                                </div>
-                                <div class="form-group col-md-6">
-                                <label for="feDescription">Notas</label>
-                                <textarea class="form-control" name="feDescription" rows="5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae minima obcaecati quod dolorum sint alias, possimus illum assumenda eligendi cumque?</textarea>
-                              </div>
-                             </div>
-                            <div class="form-row">
+                        
+                            <button type="submit" id="actualizarUser" class="btn btn-accent">Actualizar</button>
+                        
+
+                          <?php 
+                          }
+                          ?>
                              
-                            </div>
-                            <button type="submit" class="btn btn-accent">Actualizar</button>
-                          </form>
                         </div>
                       </div>
                     </li>

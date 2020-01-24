@@ -1,4 +1,44 @@
 $(document).ready(function(){
+
+//Traigo los datos para actualizar el usuario actualizarUser
+$(document).on('click', '#actualizarUser', function(){
+
+  // Capturo los id de  los inputs y los paso a la variables para que procese
+var name = $('#feFirstName').val();
+var usuario = $('#feLastName').val();
+var email = $('#feEmailAddress').val();
+var pass = $('#fePassword').val();
+
+$.ajax({
+  url: 'modules/UpdateUser.php',
+  type: 'POST',
+  data: {
+    'save': 1,
+    'name': name,
+    'user':usuario,
+    'email':email,
+    'pass':pass,
+  
+  },
+  error: function()
+  {
+    
+    swal("error!");
+  },
+  beforeSend: function()
+  {
+    swal("Un momento por favor");
+  },
+  success: function(response){
+       
+    swal("¡Buen trabajo!", "Actualizaste la información de:" + name, "success");
+
+   
+  }
+});
+});
+
+//Crear cartera 
     $(document).on('click', '#crearCartera', function(){
 
         // Capturo los id de  los inputs y los paso a la variables para que procese
@@ -26,14 +66,28 @@ $(document).ready(function(){
           'valIni':valIni,
           'notes': notes,
         },
-        success: function(response){
-          $('#feFirstName').val('');
-          $('#feLastName').val('');
-          $('#feNumber').val('');
-          $('#feValIni').val('');
-          $("#Respuesta").html(response);
-          
-        }
+    //mensaje de error
+    error: function()
+        {
+    swal("!error!");
+       },
+    // Si se demora muestra el mensaje de espera
+  beforeSend: function()
+      {
+    swal("Un momento por favor");
+     },
+    //si todo sale bien  
+  success: function(response){
+    $('#feFirstName').val('');
+    $('#feLastName').val('');
+    $('#feNumber').val('');
+    $('#feValIni').val('');
+     var res = response;   
+    swal("¡Buen trabajo!", res, "success");
+
+   
+  }
+      
       });
     });
 
@@ -77,15 +131,27 @@ $(document).ready(function(){
         'category6':category6,
         'category7':category7,
       },
-      success: function(response){
-        $('#feFirstName').val('');
-        $('#feLastName').val('');
-        $('#feNumber').val('');
-        $('#feValIni').val('');
-        $("#Respuesta").html(response);
-        alert('Acción realizada '+ response);
-        
-      }
+       //mensaje de error
+    error: function()
+    {
+swal("! error ! al crear cliente");
+   },
+// Si se demora muestra el mensaje de espera
+beforeSend: function()
+  {
+swal("Un momento por favor");
+ },
+//si todo sale bien  
+success: function(response){
+  $('#feFirstName').val('');
+  $('#feLastName').val('');
+  $('#feNumber').val('');
+  $('#feValIni').val('');
+swal("¡Buen trabajo!", response, "success");
+}
+
+      
+   
     });
   });
 
@@ -128,16 +194,29 @@ $.ajax({
     'category6':category6,
     'category7':category7,
   },
-  success: function(response){
-    alert('Acción realizada '+ response);
+     //mensaje de error
+     error: function(response)
+     {
+ swal("! error al crear prestamo !  ", response);
+    }, 
+ // Si se demora muestra el mensaje de espera
+ beforeSend: function()
+   {
+ swal("Un momento por favor");
+  },
+ //si todo sale bien  
+ success: function(response){
+   
+  $('#feValue').val('');
+  $('#feInteres').val('');
+  $('#fecartera').val('');
+  $('#feDate').val('');
+  $("#Respuesta").html(response);
+ swal("¡Buen trabajo!", response, "success");
+ 
+ 
+ }
 
-    $('#feValue').val('');
-    $('#feInteres').val('');
-    $('#fecartera').val('');
-    $('#feDate').val('');
-    $("#Respuesta").html(response);
-    
-  }
 });
 });
  

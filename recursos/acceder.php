@@ -45,6 +45,7 @@ $passwordBD = $datos['contrasenia'];
 //Comprobamos si los datos son correctos
 if($userBD == $upperuser and $passPOST== $passwordBD){ 
 	session_start();
+	$_SESSION['id'] = $datos['id'];
 	$_SESSION['usuario'] = $datos['usuario'];
 	$_SESSION['nombreapellido'] = $datos['nombreApellido'];
 	$_SESSION['foto'] = $datos['foto'];

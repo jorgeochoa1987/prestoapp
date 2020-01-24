@@ -57,7 +57,7 @@ include('header.php');
                     <li class="list-group-item p-3">
                       <div class="row">
                         <div class="col">
-                          <form>
+                         
                             <div class="form-row">
                               <div class="form-group col-md-6">
                                 <label for="feValue">Valor</label>
@@ -156,7 +156,7 @@ include('header.php');
             <!-- End Page Header -->
            
           </div>
-          </form>
+         
           <div id="cliente" class="modal fade" role="dialog">
             <div class="modal-dialog">
            <!-- Modal content-->

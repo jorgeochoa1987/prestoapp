@@ -32,7 +32,6 @@ if (isset($_POST['save'])) {
         if (mysqli_query($conexion, $sql2)) {
           $id = mysqli_insert_id($conexion);
         }
-        header('Location: /aplication/listarcartera.php');
         
 
   	}else {
