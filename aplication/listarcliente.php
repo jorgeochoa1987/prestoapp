@@ -26,7 +26,7 @@ include('header.php');
                           <th scope="col" class="border-0">#</th>
                           <th scope="col" class="border-0">Nombre</th>
                           <th scope="col" class="border-0">Apellido</th>
-                          <th scope="col" class="border-0">Dirección</th>
+                          <th scope="col" class="border-0">Cédula</th>
                           <th scope="col" class="border-0">Teléfono</th>
                           <th scope="col" class="border-0">Correo</th>
                           <th scope="col" class="border-0">Favorito</th>
@@ -46,13 +46,15 @@ include('header.php');
                               <td> <?php echo $row['id']; ?></td>
                               <td> <?php echo $row['nombre']; ?></td>
                               <td> <?php echo $row['apellido']; ?></td>
-                              <td> <?php echo $row['direccion']; ?></td>
+                              <td> <?php echo $row['cedula']; ?></td>
                               <td> <?php echo $row['telefono']; ?></td>
                               <td> <?php echo $row['correo']; ?></td>
                               <td> <?php echo $row['favorito']; ?></td>
-                              <td> <a href="modCliente.php?id=<?php echo $row ['id'];?>">Modificar </a></td>
-                              <td> <a href="#">Eliminar </a></td>
+                              <td>  <a href="modCliente.php?id=<?php echo $row ['id'];?>"><button type="button" class="mb-2 btn btn-sm btn-info mr-1">Modificar</button> </a></td>
+                              <td>  <input type="text" class="form-control" id="feid"  value="<?php echo $row ['id'];?>" hidden >  <button type="button" id="borrarCliente" class="mb-2 btn btn-sm btn-danger mr-1"><i class="material-icons">delete</i> Borrar</button>  
                           </tr>
+                        
+
                           <?php 
                           }
                           ?>

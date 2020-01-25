@@ -43,6 +43,10 @@ if(!isset($_SESSION['usuario']) and $_SESSION['estado'] != 'Autenticado') {
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <style>
+  .promo-popup.hidden {
+    bottom: -73% !important;
+  
+}
 
     .show-menu-arrow
     {
@@ -156,13 +160,13 @@ if(!isset($_SESSION['usuario']) and $_SESSION['estado'] != 'Autenticado') {
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="listarcliente.php">
+                <a class="nav-link " href="reportexcartera.php">
                   <i class="material-icons">assignment</i>
                   <span>Reportes por cartera </span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="listarcliente.php">
+                <a class="nav-link " href="reportexcliente.php">
                   <i class="material-icons">assignment</i>
                   <span>Reportes de clientes </span>
                 </a>

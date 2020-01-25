@@ -55,15 +55,13 @@ include('header.php');
                 <h3 class="page-title">Editar a <?php   $id = $_GET['id']; echo $id; ?></h3>
                </div>
             </div>
-            <form>
             <div class="row">
               <div class="col-lg-7">
                 <div class="card card-small mb-4">
                   <div class="card-header border-bottom">
                     <h6 class="m-0">Información</h6>
                     <div class="custom-control custom-checkbox mb-1">
-                              <input type="checkbox" class="custom-control-input" id="formsCheckboxDefault">
-                              <label class="custom-control-label" for="formsCheckboxDefault">Favorito</label>
+                             
                             </div>
                     <div id="Respuesta"></div>
                   </div>
@@ -71,58 +69,70 @@ include('header.php');
                     <li class="list-group-item p-3">
                       <div class="row">
                         <div class="col">
-                          <form>
+                        <?php
+                          require('../conex/conexion.php');
+                          $id = $_GET['id']; 
+                          $query2="SELECT * FROM cartera  where id = $id ";
+                          $answer2 = $conexion -> query($query2);
+                          while ($row2=$answer2->fetch_assoc()){
+                          ?> 
+
                             <div class="form-row">
                               <div class="form-group col-md-6">
                                 <label for="feFirstName">Nombre</label>
-                                <input type="text" class="form-control" id="feFirstName" placeholder="Ingrese nombre" value=""> </div>
+                                <input type="text" class="form-control" id="feFirstName" placeholder="Ingrese nombre" value=" <?php echo $row2['nombre'] ; ?>"> </div>
                               <div class="form-group col-md-6">
                                 <label for="feLastName">Apellido</label>
-                                <input type="text" class="form-control" id="feLastName" placeholder="Ingrese apellido" value=""> </div>
+                                <input type="text" class="form-control" id="feLastName" placeholder="Ingrese apellido" value=" <?php echo $row2['Apellido'] ; ?>"> </div>
                             </div>
                             <div class="form-row">
                               <div class="form-group col-md-6">
                                 <label for="feEmailAddress">Correo</label>
-                                <input type="email" class="form-control" id="feEmailAddress" placeholder="Ingrese correo" value=""> </div>
+                                <input type="email" class="form-control" id="feEmailAddress" placeholder="Ingrese correo" value=" <?php echo $row2['correo'] ; ?>"> </div>
                               <div class="form-group col-md-6">
                               <label for="feInputAddress">Teléfono</label>
-                              <input type="text" class="form-control" id="fePhone" placeholder="Ingrese teléfono"> </div>
+                              <input type="text" class="form-control" id="fePhone" placeholder="Ingrese teléfono" value="<?php echo $row2['telefono'] ; ?>"> </div>
                             </div>
                             <div class="form-row">
                               
                               <div class="form-group col-md-6">
                                 <label for="feInputCity">Ciudad</label>
-                                <input type="text" class="form-control" id="feInputCity"> </div>
+                                <input type="text" class="form-control" id="feInputCity" value="<?php echo $row2['ciudad'] ; ?>"> </div>
 
                                 <div class="form-group col-md-6">
                                 <label for="feInputCity">Cédula</label>
-                                <input type="number" class="form-control" id="feNumber"> </div>
+                                <input type="text" class="amount form-control" id="feNumber" value="<?php echo $row2['cedula'] ; ?>"> </div>
                              
                              </div>    
                             <div class="form-group">
                               <label for="feInputAddress">Dirección</label>
-                              <input type="text" class="form-control" id="feInputAddress" placeholder="Ingrese dirección"> </div>
+                              <input type="text" class="form-control" id="feInputAddress" placeholder="Ingrese dirección" value="<?php echo $row2['direccion'] ; ?>"> </div>
                               <div class="form-row">
                               <label for="feInputAddress">Valor Inicial</label>
-                              <input type="number" class="form-control" id="feValIni" placeholder="Ingrese Valor cartera"> 
+                              <input type="text" class="amount form-control" id="feValIni" placeholder="Ingrese Valor cartera" value="<?php echo $row2['valorIni'] ; ?>"> 
                             </div>                  
                             <div class="form-row">
                               <div class="form-group col-md-12">
                                 <label for="feDescription">Notas adicionales</label>
-                                <textarea class="form-control" name="fenotas" id="fenotas" rows="5"></textarea>
+                                <textarea class="form-control" name="fenotas" id="fenotas" rows="5" ><?php echo $row2['notasAdicionales']; ?></textarea>
                               </div>
-                              <button type="submit" id="editarCartera" class="btn btn-accent">editar cartera</button>
+
+
+                              <button type="submit" id="editarCartera" class="btn btn-accent">editar usuario cartera</button>
                             </div>
-                    
-                          </form>
-                          
+
+                       
                         </div>
                         
                       </div>
                       
                     </li>
+                    <input type="text" class="form-control"  id="feidcartera" value="<?php echo $row2['id'] ; ?>" hidden> 
+
                   </ul>
-                  
+                  <?php 
+                        }
+                        ?>
                 </div>
                 
               </div>

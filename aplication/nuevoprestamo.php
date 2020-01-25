@@ -61,10 +61,10 @@ include('header.php');
                             <div class="form-row">
                               <div class="form-group col-md-6">
                                 <label for="feValue">Valor</label>
-                                <input type="text" class="form-control" id="feValue" placeholder="Valor" value="0"> </div>
+                                <input type="text" class="amount form-control" id="feValue" placeholder="Valor" value="0"> </div>
                               <div class="form-group col-md-6">
                                 <label for="feInteres">Interes</label>
-                                <input type="text" class="form-control" id="feInteres" placeholder="Interes" value="0"> </div>
+                                <input type="text" class=" form-control" id="feInteres" placeholder="Interes" value="0"> </div>
                             </div>
                             <div class="form-row">
                               <div class="form-group col-md-6">
@@ -228,8 +228,6 @@ include('header.php');
     document.getElementById("fecartera").innerHTML=str;
 
   }
-
-
   //alert('Acción realizada '+ str);
 }  
         </script>

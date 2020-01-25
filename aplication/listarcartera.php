@@ -28,7 +28,7 @@ include('header.php');
                           <th scope="col" class="border-0">Apellido</th>
                           <th scope="col" class="border-0">Telefono</th>
                           <th scope="col" class="border-0">Correo</th>
-                          <th scope="col" class="border-0">Valor</th>
+                          <th scope="col" class="border-0">Dinero</th>
                           <th scope="col" class="border-0">Favorito</th>
                           <th scope="col" class="border-0">Modificar</th>
                           <th scope="col" class="border-0">Eliminar</th>
@@ -48,10 +48,10 @@ include('header.php');
                               <td> <?php echo $row['Apellido']; ?></td>
                               <td> <?php echo $row['telefono']; ?></td>
                               <td> <?php echo $row['correo']; ?></td>
-                              <td> <?php echo $row['valorIni']; ?></td>
+                              <td class="amount"> $ <?php echo $row['valorIni']; ?></td>
                               <td> <?php echo $row['favorito']; ?></td>
-                              <td> <a href="modCartera.php?id=<?php echo $row ['id'];?>">Modificar </a></td>
-                              <td> <a href="#">Eliminar </a></td>
+                              <td>  <a href="modCartera.php?id=<?php echo $row ['id'];?>"><button type="button" class="mb-2 btn btn-sm btn-info mr-1">Modificar</button> </a></td>
+                              <td>  <input type="text" class="form-control" id="feidcartera"  value="<?php echo $row ['id'];?>" hidden >  <button type="button" id="borrarCartera" class="mb-2 btn btn-sm btn-danger mr-1"><i class="material-icons">delete</i> Borrar</button>  
                           </tr>
                           <?php 
                           }
@@ -98,7 +98,7 @@ include('header.php');
                               <td> <?php echo $row['Apellido']; ?></td>
                               <td> <?php echo $row['telefono']; ?></td>
                               <td> <?php echo $row['correo']; ?></td>
-                              <td> <?php echo $row['valorIni']; ?></td>
+                              <td class="amount"> <?php echo $row['valorIni']; ?></td>
                               <td> <?php echo $row['favorito']; ?></td>
                               <td> <a href="modCartera.php?id=<?php echo $row ['id'];?>">Modificar </a></td>
                               <td> <a href="#">Eliminar </a></td>

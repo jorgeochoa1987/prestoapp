@@ -17,10 +17,7 @@ if (isset($_POST['save'])) {
   	if (mysqli_query($conexion, $sql)) {
   	  $id = mysqli_insert_id($conexion);
     
-        echo'<div class="comment_box" id="Respuesta">
-        Creado la cartera de "'.$name.'"
-        <p>valor por:"'.$valIni.'" </p>
-        </div>';
+        echo'Creado la cartera de "'.$cliente.'" valor por:"'.$date.'" ';
         
 
   	}else {

@@ -58,7 +58,7 @@ include('header.php');
               </div>
             </div>
             <div class="row">
-              <div class="col-lg-7">
+              <div class="col-lg-12">
                 <div class="card card-small mb-4">
                   <div class="card-header border-bottom">
                     <h6 class="m-0">Información</h6>
@@ -92,7 +92,7 @@ include('header.php');
 
                                 <div class="form-group col-md-6">
                                 <label for="feInputCity">Cédula</label>
-                                <input type="number" class="form-control" id="feNumber" placeholder="Ingrese Cédula"> </div>
+                                <input type="text" class="amount form-control" id="feNumber" placeholder="Ingrese Cédula"> </div>
                              
                              </div>    
                             <div class="form-group">
@@ -100,7 +100,7 @@ include('header.php');
                               <input type="text" class="form-control" id="feInputAddress" placeholder="Ingrese dirección"> </div>
                               <div class="form-row">
                               <label for="feInputAddress">Valor Inicial</label>
-                              <input type="number" class="form-control" id="feValIni" placeholder="Ingrese Valor cartera"> 
+                              <input type="text" class="amount form-control" id="feValIni" placeholder="Ingrese Valor cartera"> 
                             </div>                  
                             <div class="form-row">
                               <div class="form-group col-md-12">

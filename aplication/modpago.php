@@ -56,7 +56,7 @@ include('header.php');
 
                </div>
             </div>
-            <form>
+         
             <div class="row">
               <div class="col-lg-7">
                 <div class="card card-small mb-4">
@@ -72,53 +72,56 @@ include('header.php');
                     <li class="list-group-item p-3">
                       <div class="row">
                         <div class="col">
-                          <form>
+                    
                             <div class="form-row">
                             <?php 
                           require('../conex/conexion.php');
                           $id = $_GET['id']; 
                           $query1="SELECT * FROM cliente  where id = $id ";
                           $answer1 = $conexion -> query($query1);
-                          while ($row1=$answer1->fetch_assoc()){
+                          while ($row2=$answer1->fetch_assoc()){
                           ?>
- <div class="form-group col-md-6">
+                          <div class="form-group col-md-12">
+                          <div class="form-row">
+                              <div class="form-group col-md-6">
                                 <label for="feFirstName">Nombre</label>
-                                <input type="text" class="form-control" id="feFirstName" placeholder="Ingrese nombre" value="<?php echo $row1['nombre']; ?>"> </div>
+                                
+                                <input type="text" class="form-control" id="feFirstName" placeholder="Ingrese nombre" value="<?php echo $row2['nombre'] ; ?>"> </div>
                               <div class="form-group col-md-6">
                                 <label for="feLastName">Apellido</label>
-                                <input type="text" class="form-control" id="feLastName" placeholder="Ingrese apellido" value="<?php echo $row1['apellido']; ?>"> </div>
+                                <input type="text" class="form-control" id="feLastName" placeholder="Ingrese apellido" value="<?php echo $row2['apellido'] ; ?>"> </div>
                             </div>
                             <div class="form-row">
                               <div class="form-group col-md-6">
                                 <label for="feEmailAddress">Correo</label>
-                                <input type="email" class="form-control" id="feEmailAddress" placeholder="Ingrese correo" value="<?php echo $row1['correo']; ?>"> </div>
+                                <input type="email" class="form-control" id="feEmailAddress" placeholder="Correo@correo.com" value="<?php echo $row2['correo'] ; ?>"> </div>
                               <div class="form-group col-md-6">
                               <label for="feInputAddress">Teléfono</label>
-                              <input type="text" class="form-control" id="fePhone" placeholder="Ingrese teléfono" value="<?php echo $row1['telefono']; ?>"> </div>
+                              <input type="text" class="form-control" id="fephone" placeholder="Ingrese teléfono" value="<?php echo $row2['telefono'] ; ?>"> </div>
                             </div>
+                            <div class="form-group">
+                              <label for="feInputAddress">Dirección</label>
+                              <input type="text" class="form-control" id="feInputAddress" placeholder="Ingrese dirección" value="<?php echo $row2['direccion'] ; ?>"> </div>
                             <div class="form-row">
                               
                               <div class="form-group col-md-6">
                                 <label for="feInputCity">Ciudad</label>
-                                <input type="text" class="form-control" id="feInputCity" value="<?php echo $row1['ciudad']; ?>"> </div>
-
+                                <input type="text" class="form-control" id="feInputCity" placeholder="Ingrese Ciudad" value="<?php echo $row2['ciudad'] ; ?>" > </div>
                                 <div class="form-group col-md-6">
                                 <label for="feInputCity">Cédula</label>
-                                <input type="number" class="form-control" id="feNumber" value="<?php echo $row1['cedula']; ?>" > </div>
-                             
-                             </div>    
-                            <div class="form-group">
-                              <label for="feInputAddress">Dirección</label>
-                              <input type="text" class="form-control" id="feInputAddress" placeholder="Ingrese dirección" value="<?php echo $row1['direccion']; ?>"> </div>
-                                              
+                                <input type="text" class="form-control" id="fenumber" placeholder="Ingrese cédula"  value=" <?php echo $row2['cedula'] ; ?>"> </div>
+                             </div>
+                        
                             <div class="form-row">
                               <div class="form-group col-md-12">
                                 <label for="feDescription">Notas adicionales</label>
-                                <textarea class="form-control" name="fenotas" id="fenotas" rows="5"><?php echo $row1['notas']; ?></textarea>
+                                <textarea class="form-control" name="fenotes" id="fenotes" rows="5" value ="<?php echo $row2['notas'] ; ?>" ></textarea>
                               </div>
-                              <button type="submit" id="editarCartera" class="btn btn-accent">Actualizar cliente</button>
                             </div>
+                            <input type="text" class="form-control" id="feid" hidden value="<?php echo $row2['id'] ; ?>">
 
+                            <button type="submit" id="ActualizarCliente" class="btn btn-accent">Actualizar Cliente</button>
+                            </div>
 
                        
                           <?php 
@@ -126,7 +129,7 @@ include('header.php');
                           ?>
                              
                     
-                          </form>
+                     
                           
                         </div>
                         
@@ -209,12 +212,6 @@ include('header.php');
                   </div>
               
               </div>
-                 
-                
-                  
-               
-                 
-            
             
             <!-- End Page Header -->
            
