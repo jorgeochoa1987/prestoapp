@@ -51,14 +51,14 @@ include('header.php');
             <div class="page-header row no-gutters py-4">
               <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
                 <span class="text-uppercase page-subtitle">Edición </span>
-                <h3 class="page-title">Usuario  <?php   $id = $_GET['id']; echo $id; ?></h3>
+                <h3 class="page-title">Cliente  <?php   $id = $_GET['id']; echo $id; ?></h3>
 
 
                </div>
             </div>
          
             <div class="row">
-              <div class="col-lg-7">
+              <div class="col-lg-5">
                 <div class="card card-small mb-4">
                   <div class="card-header border-bottom">
                     <h6 class="m-0">Información</h6>
@@ -141,7 +141,7 @@ include('header.php');
                 </div>
                 
               </div>
-              <div class='card card-small col-lg-5'>
+              <div class='card card-small col-lg-7'>
               <div class="card-header border-bottom">
                     <h6 class="m-0">Saldos pagados</h6></div>
                     <div class="card-body p-0 pb-3 bg-white text-center">
@@ -184,6 +184,8 @@ include('header.php');
                            <th scope="col" class="border-0">Valor</th>
                           <th scope="col" class="border-0">interes</th>
                           <th scope="col" class="border-0">Cartera</th>
+                          <th scope="col" class="border-0">Tipo de cobro</th>
+                          <th scope="col" class="border-0">Coutas</th>
                           <th scope="col" class="border-0">Pago</th>
 
                         </tr>
@@ -192,15 +194,63 @@ include('header.php');
                       <?php 
                           require('../conex/conexion.php');
                           $id = $_GET['id']; 
-                          $query="SELECT ct.id as id, ct.prestamo as prestamo, ct.interes as interes, cr.nombre as nombre FROM cuenta  as ct join cartera as cr on ct.id_prestamista = cr.id  where id_cliente = $id ";
+                          $query="SELECT  ct.cuotas as numcoutas, ct.id as id, ct.prestamo as prestamo, ct.interes as interes, cr.nombre as nombre FROM cuenta as ct join cartera as cr on ct.id_prestamista = cr.id  where id_cliente = $id ";
                           $answer = $conexion -> query($query);
                           while ($row=$answer->fetch_assoc()){
                           ?>
                           <tr>
                               <td> <?php echo $row['id']; ?></td>
                               <td> <?php echo $row['prestamo']; ?></td>
-                              <td> <?php echo $row['interes']; ?></td>
+                              <td> <?php echo $row['interes']; ?> %</td>
                               <td> <?php echo $row['nombre']; ?></td>
+                              <td>
+                              <?php 
+                            $tcobro = $row['id']; 
+                            $query_c ="SELECT * FROM dias where id_cuenta = $tcobro";
+                            $answer4 = $conexion -> query($query_c);
+                            while($row4 = $answer4 -> fetch_assoc())
+                            {
+                              if ($row4['lunes']==1)
+                              {
+                                echo $row4['lunes'];
+                              }
+                              if ($row4['martes']==1)
+                              {
+                                echo 'Martes, ';
+                              }
+                              if ($row4['miercoles']==1)
+                              {
+                                echo 'Miercoles, ';
+                              }
+                              if ($row4['jueves']==1)
+                              {
+                                echo 'Jueves, ';
+                              }
+                              if ($row4['viernes']==1)
+                              {
+                                echo 'Viernes, ';
+                              }
+                              if ($row4['sabado']==1)
+                              {
+                                echo 'Sabado, ';
+                              }
+                              if ($row4['domingo']==1)
+                              {
+                                echo 'Domingo, ';
+                              }
+                              if ($row4['mensual']==1)
+                              {
+                                echo 'Mensual';
+                              }
+                              if ($row4['quincenal']==1)
+                              {
+                                echo 'Quincenal';
+                              }
+                            }
+                             ?>
+                              </td>
+                              <th scope="col" class="border-0"><?php echo $row['numcoutas']; ?></th>
+
                               <td> <a class="btn btn-sm btn-success mr-1" href="#?id=<?php echo $row2 ['idcliente'];?>">Pagar </a></td>
  
                               </tr>

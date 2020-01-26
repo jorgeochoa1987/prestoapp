@@ -288,6 +288,8 @@ var cartera = $('#fecartera').val();
 var value = $('#feValue').val();
 var interes = $('#feInteres').val();
 var date = $('#feDate').val();
+var mesespago = $('#mesespago').val();
+var valpagar = $('#fevalorapagar').val();
 var notas = $('#feDescription').val();
 var cliente = $('#fecliente').val();
 var category1= $('#category1').val();
@@ -297,6 +299,8 @@ var category4= $('#category4').val();
 var category5= $('#category5').val();
 var category6= $('#category6').val();
 var category7= $('#category7').val();
+var category8= $('#category8').val();
+var category9= $('#category9').val();
 $.ajax({
   url: 'modules/CreacionPrestamo.php',
   type: 'POST',
@@ -309,6 +313,8 @@ $.ajax({
     'date':date,
     'notas':notas,
     'cliente':cliente,
+    'mesespago':mesespago,
+    'valpagar':valpagar,
     'category1':category1,
     'category2':category2,
     'category3':category3,
@@ -316,6 +322,9 @@ $.ajax({
     'category5':category5,
     'category6':category6,
     'category7':category7,
+    'category8':category8,
+    'category9':category9,
+  
   },
      //mensaje de error
      error: function(response)

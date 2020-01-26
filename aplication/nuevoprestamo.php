@@ -59,13 +59,37 @@ include('header.php');
                         <div class="col">
                          
                             <div class="form-row">
-                              <div class="form-group col-md-6">
+                              <div class="form-group col-md-4">
                                 <label for="feValue">Valor</label>
-                                <input type="text" class="amount form-control" id="feValue" placeholder="Valor" value="0"> </div>
-                              <div class="form-group col-md-6">
+                                <input type="number" class=" form-control" onkeyup="copiar()" id="feValue" placeholder="Valor" value="0"> </div>
+
+                              <div class="form-group col-md-2">
                                 <label for="feInteres">Interes</label>
-                                <input type="text" class=" form-control" id="feInteres" placeholder="Interes" value="0"> </div>
-                            </div>
+                                <input type="text" class=" form-control" onkeyup="copiar()"  id="feInteres" placeholder="Interes" value="0"> </div>
+                                
+                                <div class="form-group col-md-4">
+        
+                                <label for="feInteres">Valor a pagar</label>
+                                <input type="text" class="amount  form-control" id="fevalorapagarVer"  placeholder="" value="">
+                                <input type="text" class="form-control" id="fevalorapagar"  placeholder="" value="" hidden> </div>
+                                <div class="form-group col-md-2">
+                                <label for="mesepago">Meses de pago</label>
+                                  <select id="mesespago" class="form-control">
+                                    <option selected="">Meses de pago...</option>
+                                    <option Value="1">1</option>
+                                    <option Value="2">2</option>
+                                    <option Value="3">3</option>
+                                    <option Value="4">4</option>
+                                    <option Value="5">5</option>
+                                    <option Value="6">6</option>
+                                    <option Value="7">7</option>
+                                    <option Value="8">8</option>
+                                    <option Value="9">9</option>
+                                    <option Value="10">10</option>
+                                    <option Value="11">11</option>
+                                    <option Value="12">12</option>
+                                  </select> </div>
+                                </div>
                             <div class="form-row">
                               <div class="form-group col-md-6">
                               <label for="feInputState">Cartera</label>
@@ -110,40 +134,40 @@ include('header.php');
                     <ul class="list-group list-group-flush">
                       <li class="list-group-item px-3 pb-2">
                         <div class="custom-control custom-checkbox mb-1">
-                          <input type="checkbox" class="custom-control-input" id="category1" checked>
+                          <input type="checkbox" class="custom-control-input" id="category1" checked  onclick="valcheck(this.id)" value="1">
                           <label class="custom-control-label" for="category1">Lunes</label>
                         </div>
                         <div class="custom-control custom-checkbox mb-1">
-                          <input type="checkbox" class="custom-control-input" id="category2" >
+                          <input type="checkbox" class="custom-control-input" id="category2" onclick="valcheck(this.id)" value="0"  >
                           <label class="custom-control-label" for="category2">Martes</label>
                         </div>
                         <div class="custom-control custom-checkbox mb-1">
-                          <input type="checkbox" class="custom-control-input" id="category3">
+                          <input type="checkbox" class="custom-control-input" id="category3" onclick="valcheck(this.id)" value="0" >
                           <label class="custom-control-label" for="category3">Miercoles</label>
                         </div>
                         <div class="custom-control custom-checkbox mb-1">
-                          <input type="checkbox" class="custom-control-input" id="category4">
+                          <input type="checkbox" class="custom-control-input" id="category4" onclick="valcheck(this.id)" value="0" >
                           <label class="custom-control-label" for="category4">Jueves</label>
                         </div>
                         <div class="custom-control custom-checkbox mb-1">
-                          <input type="checkbox" class="custom-control-input" id="category5">
+                          <input type="checkbox" class="custom-control-input" id="category5" onclick="valcheck(this.id)" value="0" >
                           <label class="custom-control-label" for="category5">Viernes</label>
                         </div>
                         <div class="custom-control custom-checkbox mb-1">
-                          <input type="checkbox" class="custom-control-input" id="category6">
+                          <input type="checkbox" class="custom-control-input" id="category6" onclick="valcheck(this.id)" value="0" >
                           <label class="custom-control-label" for="category6">Sabado</label>
                         </div>
                         <div class="custom-control custom-checkbox mb-1">
-                          <input type="checkbox" class="custom-control-input" id="category7">
+                          <input type="checkbox" class="custom-control-input" id="category7" onclick="valcheck(this.id)" value="0">
                           <label class="custom-control-label" for="category7">Domingo</label>
                         </div>
                         <div class="custom-control custom-checkbox mb-1">
-                          <input type="checkbox" class="custom-control-input" id="category8">
+                          <input type="checkbox" class="custom-control-input" onclick="valcheck(this.id)"  id="category8" value="0">
                           <label class="custom-control-label" for="category8">Quincenal</label>
                         </div>
                         <div class="custom-control custom-checkbox mb-1">
-                          <input type="checkbox" class="custom-control-input" id="category9">
-                          <label class="custom-control-label" for="category9">Mensual</label>
+                          <input type="checkbox" class="custom-control-input" onclick="valcheck(this.id)"   id="category9" value="0">
+                          <label class="custom-control-label" for="category9"  >Mensual</label>
                         </div>
                       </li>
                       <li class="list-group-item d-flex px-3">

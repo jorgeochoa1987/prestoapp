@@ -17,7 +17,8 @@ if (isset($_POST['save'])) {
     $category5 = $_POST['category5'];
     $category6 = $_POST['category6'];
     $category7 = $_POST['category7'];
-
+    $category8 = $_POST['category6'];
+    $category9 = $_POST['category7'];
     if($number=='' or $name =='')
     {
       echo '<div class="comment_box" id="Respuesta"> Es Obligatorio llenar la cedula y nombre </div>';

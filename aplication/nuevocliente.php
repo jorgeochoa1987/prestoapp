@@ -91,47 +91,7 @@ include('header.php');
                 </div>
               </div>
               <div class='card card-small col-lg-3'>
-                  <div class="card-header border-bottom">
-                    <h6 class="m-0">Días de cobro</h6>
-                  </div>
-                  <div class='card-body p-0'>
-                    <ul class="list-group list-group-flush">
-                      <li class="list-group-item px-3 pb-2">
-                        <div class="custom-control custom-checkbox mb-1">
-                          <input type="checkbox" class="custom-control-input" id="category1" value="1" checked>
-                          <label class="custom-control-label" for="category1">Lunes</label>
-                        </div>
-                        <div class="custom-control custom-checkbox mb-1">
-                          <input type="checkbox" class="custom-control-input" value="1"  id="category2" >
-                          <label class="custom-control-label" for="category2">Martes</label>
-                        </div>
-                        <div class="custom-control custom-checkbox mb-1">
-                          <input type="checkbox" class="custom-control-input" value="1"   id="category3">
-                          <label class="custom-control-label" for="category3">Miercoles</label>
-                        </div>
-                        <div class="custom-control custom-checkbox mb-1">
-                          <input type="checkbox" class="custom-control-input" value="1"   id="category4">
-                          <label class="custom-control-label" for="category4">Jueves</label>
-                        </div> 
-                        <div class="custom-control custom-checkbox mb-1">
-                          <input type="checkbox" class="custom-control-input" value="1"  id="category5">
-                          <label class="custom-control-label" for="category5">Viernes</label>
-                        </div>
-                        <div class="custom-control custom-checkbox mb-1">
-                          <input type="checkbox" class="custom-control-input" value="1"  id="category6">
-                          <label class="custom-control-label" for="category6">Sabado</label>
-                        </div>
-                        <div class="custom-control custom-checkbox mb-1">
-                          <input type="checkbox" class="custom-control-input" value="1"  id="category7">
-                          <label class="custom-control-label" for="category7">Domingo</label>
-                        </div>
-                      </li>
-                      <li class="list-group-item d-flex px-3">
-                      
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+               
             </div>
             <!-- End Page Header -->
           </div>

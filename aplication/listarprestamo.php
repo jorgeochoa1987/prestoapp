@@ -49,7 +49,6 @@ include('header.php');
                           <th scope="col" class="border-0">Telefono</th>
                           <th scope="col" class="border-0">Correo</th>
                           <th scope="col" class="border-0">Prestado</th>
-                          <th scope="col" class="border-0">tipo cobro</th>
                           <th scope="col" class="border-0">Pagar</th>
                         </tr>
                       </thead>
@@ -74,7 +73,7 @@ include('header.php');
                              <th scope="col" class="border-0"><?php echo $row2['phone']; ?></th>
                              <th scope="col" class="border-0"><?php echo $row2['mail']; ?></th>
                              <th scope="col" class="border-0"><?php echo $row2['money']; ?></th>
-                             <th scope="col" class="border-0"><?php echo $row2['cobro']; ?></th>
+                           
                              <td> <a class="btn btn-sm btn-success mr-1" href="modpago.php?id=<?php echo $row2 ['idcliente'];?>">Pagar </a></td>
  
                              </tr>
