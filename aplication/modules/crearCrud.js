@@ -468,12 +468,52 @@ success: function(response){
     }
   });
 
-}
+}});
+});
 
+//pagar
+  //Traigo los datos para actualizar el usuario actualizarUser
+  $(document).on('click', '#PagarCuota', function(){
+   
+    // Capturo los id de  los inputs y los paso a la variables para que procese
+  var cuenta = $('#fecuenta').val();
+  var cliente = $('#fecliente').val();
+  var cartera = $('#idcartera').val();
+  var valor = $('#feValue').val();
   
+  $.ajax({
+    url: 'modules/crearPago.php',
+    type: 'POST',
+    data: {
+      'save': 1,
+      'cuenta': cuenta,
+      'cliente':cliente,
+      'cartera':cartera,
+      'valor':valor,
+    
+    },
+    error: function()
+    {
+      
+      swal("error!");
+    },
+    beforeSend: function()
+    {
+      swal("Un momento por favor");
+    },
+    success: function(response){
+         
+      swal("¡Buen trabajo!", "Pago realizado", "success"),
+      window.location.href="modpago.php?id="+cliente;
+    }
+  });
+  });
 
-});
-});
+//Fin pagar
 
+
+
+
+ 
  
 });

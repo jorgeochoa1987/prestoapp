@@ -164,7 +164,7 @@ include('header.php');
                           ?>
                           <tr>
                               <td> <?php echo $row['id']; ?></td>
-                              <td> <?php echo $row['valor']; ?></td>
+                              <td>$ <?php echo $row['valor']; ?></td>
                               <td> <?php echo $row['ncartera']; ?></td>
                               <td> <?php echo $row['fechaPago']; ?></td>
                               </tr>
@@ -194,15 +194,15 @@ include('header.php');
                       <?php 
                           require('../conex/conexion.php');
                           $id = $_GET['id']; 
-                          $query="SELECT  ct.cuotas as numcoutas, ct.id as id, ct.prestamo as prestamo, ct.interes as interes, cr.nombre as nombre FROM cuenta as ct join cartera as cr on ct.id_prestamista = cr.id  where id_cliente = $id ";
+                          $query="SELECT  ct.cuotas as numcoutas, ct.id as id, ct.valorPagar as prestamo, ct.interes as interes, cr.nombre as nombre FROM cuenta as ct join cartera as cr on ct.id_prestamista = cr.id  where id_cliente = $id ";
                           $answer = $conexion -> query($query);
                           while ($row=$answer->fetch_assoc()){
                           ?>
                           <tr>
-                              <td> <?php echo $row['id']; ?></td>
-                              <td> <?php echo $row['prestamo']; ?></td>
-                              <td> <?php echo $row['interes']; ?> %</td>
-                              <td> <?php echo $row['nombre']; ?></td>
+                              <td><input id="id" value="<?php echo $row['id']; ?>" hidden> <?php echo $row['id']; ?> </td>
+                              <td><input id="prestamo" value="<?php echo $row['prestamo']; ?>" hidden>$  <?php echo $row['prestamo']; ?></td>
+                              <td id="interes"> <?php echo $row['interes']; ?> %</td>
+                              <td id="nombre"> <?php echo $row['nombre']; ?></td>
                               <td>
                               <?php 
                             $tcobro = $row['id']; 
@@ -247,11 +247,11 @@ include('header.php');
                                 echo 'Quincenal';
                               }
                             }
-                             ?>
+                             ?> 
                               </td>
                               <th scope="col" class="border-0"><?php echo $row['numcoutas']; ?></th>
+                              <td> <a class="btn btn-sm btn-success mr-1" href="pagocuota.php?id=<?php echo $row['id']; ?>&idcl=<?php $id = $_GET['id']; echo $id; ?>"  >Pagar </a></td>
 
-                              <td> <a class="btn btn-sm btn-success mr-1" href="#?id=<?php echo $row2 ['idcliente'];?>">Pagar </a></td>
  
                               </tr>
                           <?php 
