@@ -10,7 +10,6 @@ if($host=='javierperezb.com')
       echo 'Ha habido un error <br>'.mysqli_connect_error(); 
      } else {
   
-  echo 'Conectado a la base de datos';
   
       
      } 
@@ -24,7 +23,6 @@ else
       echo 'Ha habido un error <br>'.mysqli_connect_error(); 
      } else {
   
-  echo 'Recuerde cambiarme Conectado a la base de datos';
   
      } 
 }
