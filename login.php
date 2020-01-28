@@ -1,7 +1,4 @@
-
-<?php
-phpinfo();
-?><?php
+  <?php
 //Iniciamos la sesión
 session_start();
 
@@ -73,11 +70,7 @@ require('recursos/sesiones.php');
 
 					<input style="background:white; color:black;" type="submit" name="acceso" class="login100-form-btn" value="Iniciar">
 
-					<div class="text-center p-t-90">
-						<a class="txt1" href="#">
-							olvido su contraseña
-						</a>
-					</div>
+					
 				</form>
 			</div>
 		</div>
