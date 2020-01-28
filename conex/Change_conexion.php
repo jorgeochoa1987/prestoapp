@@ -12,8 +12,3 @@ echo 'Conectado a la base de datos';
 
 
 ?>
-
-
-<?php
-phpinfo();
-?>
