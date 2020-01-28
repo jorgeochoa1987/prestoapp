@@ -6,8 +6,9 @@ $conexion = new mysqli("localhost", "root", "", "u465803286_prestoapp");
     echo 'Ha habido un error <br>'.mysqli_connect_error(); 
    } else {
 
-echo 'Conectado a la base de datos';
-    
+echo 'Recuerde cambiarme Conectado a la base de datos';
+$host= $_SERVER["HTTP_HOST"];
+echo $host;
    } 
 
 

@@ -7,6 +7,7 @@ $conexion = new mysqli("localhost", "u492238651_prestoapp", "Veu[N+=K", "u492238
    } else {
 
 echo 'Conectado a la base de datos';
+
     
    } 
 
