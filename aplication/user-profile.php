@@ -100,6 +100,8 @@ include('header.php');
                             <div class="form-row">
                               <div class="form-group col-md-6">
                                 <label for="feFirstName">Nombre </label>
+                                <input type="text" class="form-control" id="feId"  value="<?php echo $row1['id']; ?>" hidden>
+
                                 <input type="text" class="form-control" id="feFirstName" placeholder="Primer nombre" value="<?php echo $row1['nombreApellido']; ?>"> </div>
                               <div class="form-group col-md-6">
                                 <label for="feLastName">Usuario</label>

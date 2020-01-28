@@ -4,7 +4,8 @@ $(document).ready(function(){
 $(document).on('click', '#actualizarUser', function(){
 
   // Capturo los id de  los inputs y los paso a la variables para que procese
-  var image = $('#idimage').val();
+var image = $('#idimage').val();
+var id = $('#feId').val();
 var name = $('#feFirstName').val();
 var usuario = $('#feLastName').val();
 var email = $('#feEmailAddress').val();
@@ -16,6 +17,7 @@ $.ajax({
   data: {
     'save': 1,
     'image':image,
+    'id':id,
     'name': name,
     'user':usuario,
     'email':email,
