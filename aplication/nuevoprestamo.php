@@ -51,12 +51,15 @@ include('header.php');
               <div class="col-lg-7">
                 <div class="card card-small mb-4">
                   <div class="card-header border-bottom">
-                    <h6 class="m-0">Información básica</h6>
+                    <h6 class="m-0">Información básica</h6>       <div class="form-group col-md-6">
+                                <label for="feFirstName">Fecha de prestamo</label>
+                                <input type="date" class="form-control" id="dateprestamo" > </div>
                   </div>
                   <ul class="list-group list-group-flush">
                     <li class="list-group-item p-3">
                       <div class="row">
                         <div class="col">
+                  
                          
                             <div class="form-row">
                               <div class="form-group col-md-4">

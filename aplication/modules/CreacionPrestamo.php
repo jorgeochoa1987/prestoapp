@@ -12,6 +12,10 @@ if (isset($_POST['save'])) {
     $valpagar = $_POST['valpagar'];
     $mesesaumentar = strtotime("+$mesespago month");
     $fechaFin = date("Y-m-d H:i:s", $mesesaumentar); 
+
+    $fechaprestamo = $_POST['fechaprestamo'];
+ 
+    
     $category1 = $_POST['category1'];
     $category2 = $_POST['category2'];
     $category3 = $_POST['category3'];
@@ -30,7 +34,7 @@ if (isset($_POST['save'])) {
     }
   
 
-  	$sql = "INSERT INTO `cuenta` (`id`, `id_cliente`, `id_prestamista`, `prestamo`, `fecha_prestamo`, `interes`, `fechaVisita1`, `valorPagar`, `meses`, `fechaFin`) VALUES (NULL, '$cliente ', '$cartera', '$value', current_timestamp(), '$interes', '$date', '$valpagar', '$mesespago', '$fechaFin');";
+  	$sql = "INSERT INTO `cuenta` (`id`, `id_cliente`, `id_prestamista`, `prestamo`, `fecha_prestamo`, `interes`, `fechaVisita1`, `valorPagar`, `meses`, `fechaFin`) VALUES (NULL, '$cliente ', '$cartera', '$value', '$fechaprestamo', '$interes', '$date', '$valpagar', '$mesespago', '$fechaFin');";
   	if (mysqli_query($conexion, $sql)) {
       $id = mysqli_insert_id($conexion);
       
@@ -48,7 +52,7 @@ if (isset($_POST['save'])) {
         $tiempo = "No se creó los tiempos";
 
       } 
-        $Respuesta =  "Prestamo creado, $tiempo" ;
+        $Respuesta =  "Prestamo creado, $tiempo, fecha de prestamo $fechaprestamo" ;
         echo $Respuesta;
       }else{
       $Respuesta =  "Error: ". mysqli_error($conexion);

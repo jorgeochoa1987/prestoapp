@@ -293,6 +293,8 @@ $(document).on('click', '#crearPrestamo', function(){
   // Capturo los id de  los inputs y los paso a la variables para que procese
 //alert('entre a crear cliente');
 
+var fechaprestamo = $('#dateprestamo').val();
+
 var cartera = $('#fecartera').val();
 var value = $('#feValue').val();
 var interes = $('#feInteres').val();
@@ -322,6 +324,7 @@ $.ajax({
     'date':date,
     'notas':notas,
     'cliente':cliente,
+    'fechaprestamo':fechaprestamo,
     'mesespago':mesespago,
     'valpagar':valpagar,
     'category1':category1,
