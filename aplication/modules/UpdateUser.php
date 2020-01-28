@@ -4,7 +4,7 @@ if (isset($_POST['save'])) {
     $image = $_POST['image'];
     $name = $_POST['name'];
     $user = $_POST['user'];
-    $email = $_POST['email'];
+    $email = strtoupper($_POST['email']);
     $pass = $_POST['pass'];
 
     if($name=='' )
