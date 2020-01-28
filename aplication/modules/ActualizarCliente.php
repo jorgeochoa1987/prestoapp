@@ -3,6 +3,7 @@ require('../../conex/conexion.php');
 if (isset($_POST['save'])) {
     $id = $_POST['id'];
     $name = $_POST['name'];
+    $image =$_POST['image'];
     $lastname = $_POST['lastname'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
@@ -19,7 +20,7 @@ if (isset($_POST['save'])) {
       exit();
     }
   	$sql = " UPDATE `cliente` SET `nombre` = '$name', `apellido` = '$lastname', `correo` = '$email',  
-    `correo` = '$email',`telefono` = '$phone',`cedula` = '$number' ,`direccion` = '$address',`notas` = '$notes' WHERE `id` = $id ;";
+    `correo` = '$email',`telefono` = '$phone',`cedula` = '$number' ,`direccion` = '$address',`notas` = '$notes',`foto` = '$image' WHERE `id` = $id ;";
   	if (mysqli_query($conexion, $sql)) {
   	  $id = mysqli_insert_id($conexion);
     

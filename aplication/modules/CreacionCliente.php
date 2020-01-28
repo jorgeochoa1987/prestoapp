@@ -2,6 +2,7 @@
 require('../../conex/conexion.php');
 if (isset($_POST['save'])) {
     $name = $_POST['name'];
+    $image =$_POST['image'];
     $lastname = $_POST['lastname'];
     $name = $_POST['name'];
     $email = $_POST['email'];
@@ -10,21 +11,13 @@ if (isset($_POST['save'])) {
     $number = $_POST['number'];
     $address = $_POST['address'];
     $notes = $_POST['notes'];
-    $category1 = $_POST['category1'];
-    $category2 = $_POST['category2'];
-    $category3 = $_POST['category3'];
-    $category4 = $_POST['category4'];
-    $category5 = $_POST['category5'];
-    $category6 = $_POST['category6'];
-    $category7 = $_POST['category7'];
-    $category8 = $_POST['category6'];
-    $category9 = $_POST['category7'];
+
     if($number=='' or $name =='')
     {
-      echo '<div class="comment_box" id="Respuesta"> Es Obligatorio llenar la cedula y nombre </div>';
+      echo "Es Obligatorio llenar la cedula y nombre" ;
       exit();
     }
-  	$sql = "INSERT INTO `cliente` (`id`, `nombre`, `apellido`, `cedula`, `correo`, `telefono`, `ciudad`, `direccion`, `notas`)  VALUES (NULL, '$name', '$lastname', '$number', '$email', '$phone', '$city', ' $address', '$notes');";
+  	$sql = "INSERT INTO `cliente` (`id`, `nombre`, `apellido`, `cedula`, `correo`, `telefono`, `ciudad`, `direccion`, `notas`, `foto`)  VALUES (NULL, '$name', '$lastname', '$number', '$email', '$phone', '$city', ' $address', '$notes','$image');";
   	if (mysqli_query($conexion, $sql)) {
   	  $id = mysqli_insert_id($conexion);
     
@@ -33,6 +26,9 @@ if (isset($_POST['save'])) {
         if (mysqli_query($conexion, $sql2)) {
           $id = mysqli_insert_id($conexion);
         }
+        
+        $Respuesta ="Creado el $name";
+        echo $Respuesta;
         
 
   	}else {

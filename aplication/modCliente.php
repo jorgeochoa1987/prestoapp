@@ -60,12 +60,20 @@ include('header.php');
               <div class="col-lg-2">
                 <div class="card card-small mb-4 pt-3">
                   <div class="card-header border-bottom text-center">
+                  <?php
+                          require('../conex/conexion.php');
+                          $id = $_GET['id']; 
+                          $query2="SELECT * FROM cliente  where id = $id ";
+                          $answer2 = $conexion -> query($query2);
+                          while ($row2=$answer2->fetch_assoc()){
+                          ?> 
                     <div class="mb-3 mx-auto">
-                      <img class="rounded-circle" src="../images/child.png" alt="Ingrese foto" width="110"> </div>
-                    <h4 class="mb-0"></h4>
+                    <img   id="imgSalida" class="rounded-circle" src="<?php echo $row2['foto'] ;?>" alt="Ingrese foto" width="110"> </div>
+                      <input type="text" class="form-control" hidden id="idimage" placeholder="Ingrese nombre" value="<?php echo $row2['foto'] ; ?>">                     <h4 class="mb-0"></h4>
                     <span class="text-muted d-block mb-2"></span>
-                    <button type="button" class="mb-2 btn btn-sm btn-pill btn-outline-primary mr-2">
-                      <i class="material-icons mr-1">person_add</i>Subir foto</button>
+                    <input  class="mb-2 btn btn-sm btn-pill btn-outline-primary mr-2"  style="
+    width: 100%;
+" name="file-input" id="file-input" type="file" />
                   </div> 
 
                   <ul class="list-group list-group-flush">
@@ -91,13 +99,7 @@ include('header.php');
                     <li class="list-group-item p-3">
                       <div class="row"> 
                         <div class="col">
-                        <?php
-                          require('../conex/conexion.php');
-                          $id = $_GET['id']; 
-                          $query2="SELECT * FROM cliente  where id = $id ";
-                          $answer2 = $conexion -> query($query2);
-                          while ($row2=$answer2->fetch_assoc()){
-                          ?> 
+                       
                             <div class="form-row">
                               <div class="form-group col-md-6">
                                 <label for="feFirstName">Nombre</label>

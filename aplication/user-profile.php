@@ -19,11 +19,27 @@ include('header.php');
                 <div class="card card-small mb-4 pt-3">
                   <div class="card-header border-bottom text-center">
                     <div class="mb-3 mx-auto">
-                      <img class="rounded-circle" src="../images/<?php echo  $foto ?>" alt="User Avatar" width="110"> </div>
+                    <?php
+                          require('../conex/conexion.php');
+                          $id = $_GET['id']; 
+                          $query3="SELECT * FROM users  where id = $id ";
+                          $answer3 = $conexion -> query($query3);
+                          while ($row3=$answer3->fetch_assoc()){
+                          ?> 
+                        <img   id="imgSalida" class="rounded-circle" src="<?php echo $row3['foto']; ?>" alt="Ingrese foto" width="110"> </div>
+                      <input type="text" class="form-control" hidden  id="idimage" placeholder="Ingrese nombre"  value="<?php echo $row3['foto']; ?>"> 
+                      <?php 
+                        }
+                        ?>
+                    
+                             
+
                     <h4 class="mb-0"><?php echo  $nombreApe ?></h4>
                     <span class="text-muted d-block mb-2">Administrador Su</span>
-                    <button type="button"  class="mb-2 btn btn-sm btn-pill btn-outline-primary mr-2">
-                      <i class="material-icons mr-1">person_add</i>Cambiar foto</button>
+                   
+                    <input  class="mb-2 btn btn-sm btn-pill btn-outline-primary mr-2"  style="
+    width: 100%;
+" name="file-input" id="file-input" type="file" />
                   </div>
                 
                   <ul class="list-group list-group-flush">

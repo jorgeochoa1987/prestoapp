@@ -4,6 +4,7 @@ $(document).ready(function(){
 $(document).on('click', '#actualizarUser', function(){
 
   // Capturo los id de  los inputs y los paso a la variables para que procese
+  var image = $('#idimage').val();
 var name = $('#feFirstName').val();
 var usuario = $('#feLastName').val();
 var email = $('#feEmailAddress').val();
@@ -14,6 +15,7 @@ $.ajax({
   type: 'POST',
   data: {
     'save': 1,
+    'image':image,
     'name': name,
     'user':usuario,
     'email':email,
@@ -95,6 +97,7 @@ $.ajax({
     $(document).on('click', '#crearCliente', function(){
       // Capturo los id de  los inputs y los paso a la variables para que procese
 //alert('entre a crear cliente');
+    var image = $('#idimage').val();
     var name = $('#feFirstName').val();
     var lastname = $('#feLastName').val();
     var email = $('#feEmailAddress').val();
@@ -115,6 +118,7 @@ $.ajax({
       type: 'POST',
       data: {
         'save': 1,
+        'image':image,
         'name': name,
         'lastname':lastname,
         'address':address,
@@ -152,6 +156,7 @@ swal("¡Buen trabajo!", response, "success"),
 window.setTimeout(function(){ } ,100000);
 window.location = "listarcliente.php";
 }
+
       
     });
   });
@@ -161,6 +166,7 @@ window.location = "listarcliente.php";
 $(document).on('click', '#ActualizarCliente', function(){
   // Capturo los id de  los inputs y los paso a la variables para que procese
 //alert('entre a crear cliente');
+var image = $('#idimage').val();
 var id   = $('#feid').val();    
 var name = $('#feFirstName').val();
 var lastname = $('#feLastName').val();
@@ -183,6 +189,7 @@ $.ajax({
   data: {
     'save': 1,
     'id':id,
+    'image':image,
     'name': name,
     'lastname':lastname,
     'address':address,

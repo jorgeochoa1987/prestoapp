@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('UTC');
 //Reanudamos la sesión
 session_start();
 
@@ -188,7 +189,10 @@ if(!isset($_SESSION['usuario']) and $_SESSION['estado'] != 'Autenticado') {
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle text-nowrap px-3" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                    <img class="user-avatar rounded-circle mr-2" src="../images/<?php  echo $foto ;?>" alt="Usuario">
+                    <img  style="
+    width: 50%;
+    height: 39px;
+" class="user-avatar rounded-circle mr-2" src="<?php  echo $foto ;?>" alt="Usuario">
                     <span class="d-none d-md-inline-block"><?php echo  $nombreApe; ?></span>
                   </a>
                   <div class="dropdown-menu dropdown-menu-small">

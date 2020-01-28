@@ -1,4 +1,7 @@
+
 <?php
+phpinfo();
+?><?php
 //Iniciamos la sesión
 session_start();
 

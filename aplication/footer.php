@@ -1,23 +1,21 @@
 <footer class="main-footer d-flex p-2 px-3 bg-white border-top">
             <ul class="nav">
               <li class="nav-item">
-                <a class="nav-link" href="#">Inicio</a>
+                <a class="nav-link" href="index.php">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Nuevo cliente</a>
+                <a class="nav-link" href="nuevocliente.php">Nuevo cliente</a>
               </li>
+             
               <li class="nav-item">
-                <a class="nav-link" href="#">Mi diario</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Cuentas</a>
+                <a class="nav-link" href="listarcartera.php">Cartera</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Vencidos</a>
               </li>
             </ul>
-            <span class="copyright ml-auto my-auto mr-2">Copyright © 2019
-              <a href="https://designrevision.com" rel="nofollow">WickWit</a>
+            <span class="copyright ml-auto my-auto mr-2">Copyright © <?php  echo date("Y");?>
+              <a href="https://wickwit" rel="nofollow">WickWit</a>
             </span>
           </footer>
         </main>
@@ -39,28 +37,19 @@
       </div>
       <div class="pp-inner-content" style="padding-left:15px!important">
         <div class="row">
-        <div class="col-lg col-md-2 col-sm-6 mb-4">
-                <div class="stats-small stats-small--1 card card-small">
-                  <div class="card-body p-0 d-flex">
-                    <div class="d-flex flex-column m-auto">
-                      <div class="stats-small__data text-center">
-                        <span class="stats-small__label text-uppercase">Pepe</span>
-                        <h6 class="stats-small__value count my-3">2,390</h6>
-                      </div>
-                      <div class="stats-small__data">
-                      </div>
-                    </div>
-                    <canvas height="120" class="blog-overview-stats-small-1"></canvas>
-                  </div>
-                </div>
-              </div>
+        <?php
+                          require('../conex/conexion.php');
+                          $query99="SELECT * FROM `cliente` WHERE `favorito`=1";
+                          $answer99 = $conexion -> query($query99);
+                          while ($row99=$answer99->fetch_assoc()){
+                          ?> 
               <div class="col-lg col-md-2 col-sm-6 mb-4">
                 <div class="stats-small stats-small--1 card card-small">
                   <div class="card-body p-0 d-flex">
                     <div class="d-flex flex-column m-auto">
                       <div class="stats-small__data text-center">
-                        <span class="stats-small__label text-uppercase">Antonio</span>
-                        <h6 class="stats-small__value count my-3">2,390</h6>
+                        <span class="stats-small__label text-uppercase"><?php echo $row99['nombre']; ?></span>
+                        <h6 class="stats-small__value count my-3"><?php echo $row99['telefono']; ?></h6>
                       </div>
                       <div class="stats-small__data">
                       </div>
@@ -69,21 +58,11 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg col-md-2 col-sm-6 mb-4">
-                <div class="stats-small stats-small--1 card card-small">
-                  <div class="card-body p-0 d-flex">
-                    <div class="d-flex flex-column m-auto">
-                      <div class="stats-small__data text-center">
-                        <span class="stats-small__label text-uppercase">Carlos</span>
-                        <h6 class="stats-small__value count my-3">2,390</h6>
-                      </div>
-                      <div class="stats-small__data">
-                      </div>
-                    </div>
-                    <canvas height="120" class="blog-overview-stats-small-1"></canvas>
-                  </div>
-                </div>
-              </div>
+              <?php 
+                        } 
+                        ?>
+                     
+                             
         </div>
         <a class="pp-cta extra-action" href="index.php">Ver lista completa</a>
       </div>

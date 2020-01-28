@@ -1,6 +1,7 @@
 <?php
 require('../../conex/conexion.php');
 if (isset($_POST['save'])) {
+    $image = $_POST['image'];
     $name = $_POST['name'];
     $user = $_POST['user'];
     $email = $_POST['email'];
@@ -14,7 +15,7 @@ if (isset($_POST['save'])) {
 
    
 
-  	$sql = " UPDATE `users` SET `nombreApellido` = '$name', `correo` = '$email',  `usuario` = '$user',`contrasenia` = '$pass' WHERE `users`.`id` = 1;";
+  	$sql = " UPDATE `users` SET `nombreApellido` = '$name', `correo` = '$email',  `usuario` = '$user',`contrasenia` = '$pass' ,`foto` = '$image'  WHERE `users`.`id` = 1;";
   	if (mysqli_query($conexion, $sql)) {
   	  $id = mysqli_insert_id($conexion);
     
