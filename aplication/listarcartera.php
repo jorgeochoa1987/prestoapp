@@ -57,7 +57,7 @@ include('header.php');
               </div>
             </div>
             <!-- End Default Light Table -->
-            <!-- Default Dark Table -->
+            <!-- Default Dark Table 
             <div class="row">
               <div class="col">
                 <div class="card card-small overflow-hidden mb-4">
@@ -101,7 +101,7 @@ include('header.php');
                   </div>
                 </div>
               </div>
-            </div>
+            </div>-->
             <!-- End Default Dark Table -->
           </div>
           <?php
