@@ -10,7 +10,15 @@ include('header.php');
             <div class="page-header row no-gutters py-4">
               <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
                 <span class="text-uppercase page-subtitle">Página de inicio</span>
-                <h3 class="page-title">Estado de cuentas</h3><h4 class="page-title" style=" width: 100%;font-size: 15px;"><?php echo date('l jS \of F Y h:i:s A'); ?></h4>
+                <h3 class="page-title">Estado de cuentas</h3><h4 class="page-title" style=" width: 100%;font-size: 15px;">
+                
+                <?php date_default_timezone_set('America/Bogota'); 
+                $dias = array("Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sábado");
+                $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+                 
+                echo $dias[date('w')]." ".date('d')." de ".$meses[date('n')-1]. " del ".date('Y') ; 
+                
+                ?></h4>
               </div>
             </div>
             <!-- End Page Header -->
