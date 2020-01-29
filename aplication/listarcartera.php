@@ -35,7 +35,7 @@ include('header.php');
                         
                          <?php 
                           require('../conex/conexion.php');
-                          $query="SELECT * FROM cartera  where saldo > 0 ";
+                          $query="SELECT * FROM cartera  where saldo > 0  order by id asc ";
                           $answer = $conexion -> query($query);
                           while ($row=$answer->fetch_assoc()){
                           ?>

@@ -36,7 +36,7 @@ include('header.php');
                         
                       <?php 
                           require('../conex/conexion.php');
-                          $query="SELECT * FROM cliente where estado != 1 ";
+                          $query="SELECT * FROM cliente where estado != 1 order by id asc ";
                           $answer = $conexion -> query($query);
                           while ($row=$answer->fetch_assoc()){
                           ?>
