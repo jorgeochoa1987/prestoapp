@@ -61,7 +61,7 @@ include('header.php');
                           if(  date("l") =='Monday')
                           {
                             require('../conex/conexion.php');
-                            $query2="SELECT ct.id_cliente as idcli, cl.nombre as nombre, cl.notas as notas, ct.valorPagar as valpago, car.nombre as nombreCartera, d.lunes as lunes, d.martes as martes, d.miercoles as miercoles, d.jueves as jueves, d.viernes as viernes, d.sabado as sabado, d.domingo as domingo, d.quincenal as quince, d.mensual as mes
+                            $query2="SELECT cl.foto as foto, ct.id_cliente as idcli, cl.nombre as nombre, cl.notas as notas, ct.valorPagar as valpago, car.nombre as nombreCartera, d.lunes as lunes, d.martes as martes, d.miercoles as miercoles, d.jueves as jueves, d.viernes as viernes, d.sabado as sabado, d.domingo as domingo, d.quincenal as quince, d.mensual as mes
                             FROM `cuenta` as ct
                             join `dias`as d
                             on ct.id = d.id_cuenta
@@ -75,7 +75,15 @@ include('header.php');
                             ?>  
                             <div class="col-lg-6 col-sm-12 mb-4">
                                 <div class="card card-small card-post card-post--aside card-post--1">
-                                  <div class="card-post__image" style="background-image: url('images/content-management/5.jpeg');">
+                                <? if ($row2['foto'] =="")
+                                {
+                                  echo "<div class=\"card-post__image\" scr=\" echo $row2[foto]\">";
+
+                                }
+
+                                else
+                                echo  "<div class=\"card-post__image\" style=\"background-image: url('../images/child.png');\">";
+                                ?>
                                     <a href="#" class="card-post__category badge badge-pill badge-info">Cartera: <?php echo $row2['nombreCartera']; ?></a>
                                   
                                   </div>
@@ -121,8 +129,15 @@ include('header.php');
                            ?>  
                            <div class="col-lg-6 col-sm-12 mb-4">
                                <div class="card card-small card-post card-post--aside card-post--1">
-                                 <div class="card-post__image" style="background-image: url('images/content-management/5.jpeg');">
-                                   <a href="#" class="card-post__category badge badge-pill badge-info">Cartera: <?php echo $row2['nombreCartera']; ?></a>
+                               <? if ($row2['foto'] =="")
+                                {
+                                  echo "<div class=\"card-post__image\" scr=\" echo $row2[foto]\">";
+
+                                }
+
+                                else
+                                echo  "<div class=\"card-post__image\" style=\"background-image: url('../images/child.png');\">";
+                                ?>                                   <a href="#" class="card-post__category badge badge-pill badge-info">Cartera: <?php echo $row2['nombreCartera']; ?></a>
                                  
                                  </div>
                                  <div class="card-body">
@@ -164,8 +179,15 @@ include('header.php');
                            ?>  
                            <div class="col-lg-6 col-sm-12 mb-4">
                                <div class="card card-small card-post card-post--aside card-post--1">
-                                 <div class="card-post__image" style="background-image: url('images/content-management/5.jpeg');">
-                                   <a href="#" class="card-post__category badge badge-pill badge-info">Cartera: <?php echo $row2['nombreCartera']; ?></a>
+                               <? if ($row2['foto'] =="")
+                                {
+                                  echo "<div class=\"card-post__image\" scr=\" echo $row2[foto]\">";
+
+                                }
+
+                                else
+                                echo  "<div class=\"card-post__image\" style=\"background-image: url('../images/child.png');\">";
+                                ?>                                   <a href="#" class="card-post__category badge badge-pill badge-info">Cartera: <?php echo $row2['nombreCartera']; ?></a>
                                  
                                  </div>
                                  <div class="card-body">
@@ -209,8 +231,15 @@ include('header.php');
                            ?>  
                            <div class="col-lg-6 col-sm-12 mb-4">
                                <div class="card card-small card-post card-post--aside card-post--1">
-                                 <div class="card-post__image" style="background-image: url('images/content-management/5.jpeg');">
-                                   <a href="#" class="card-post__category badge badge-pill badge-info">Cartera: <?php echo $row2['nombreCartera']; ?></a>
+                               <? if ($row2['foto'] =="")
+                                {
+                                  echo "<div class=\"card-post__image\" scr=\" echo $row2[foto]\">";
+
+                                }
+
+                                else
+                                echo  "<div class=\"card-post__image\" style=\"background-image: url('../images/child.png');\">";
+                                ?>                                   <a href="#" class="card-post__category badge badge-pill badge-info">Cartera: <?php echo $row2['nombreCartera']; ?></a>
                                  
                                  </div>
                                  <div class="card-body">
@@ -254,8 +283,15 @@ include('header.php');
                            ?>  
                            <div class="col-lg-6 col-sm-12 mb-4">
                                <div class="card card-small card-post card-post--aside card-post--1">
-                                 <div class="card-post__image" style="background-image: url('images/content-management/5.jpeg');">
-                                   <a href="#" class="card-post__category badge badge-pill badge-info">Cartera: <?php echo $row2['nombreCartera']; ?></a>
+                               <? if ($row2['foto'] =="")
+                                {
+                                  echo "<div class=\"card-post__image\" scr=\" echo $row2[foto]\">";
+
+                                }
+
+                                else
+                                echo  "<div class=\"card-post__image\" style=\"background-image: url('../images/child.png');\">";
+                                ?>                                   <a href="#" class="card-post__category badge badge-pill badge-info">Cartera: <?php echo $row2['nombreCartera']; ?></a>
                                  
                                  </div>
                                  <div class="card-body">
@@ -299,8 +335,15 @@ include('header.php');
                            ?>  
                            <div class="col-lg-6 col-sm-12 mb-4">
                                <div class="card card-small card-post card-post--aside card-post--1">
-                                 <div class="card-post__image" style="background-image: url('images/content-management/5.jpeg');">
-                                   <a href="#" class="card-post__category badge badge-pill badge-info">Cartera: <?php echo $row2['nombreCartera']; ?></a>
+                               <? if ($row2['foto'] =="")
+                                {
+                                  echo "<div class=\"card-post__image\" scr=\" echo $row2[foto]\">";
+
+                                }
+
+                                else
+                                echo  "<div class=\"card-post__image\" style=\"background-image: url('../images/child.png');\">";
+                                ?>                                   <a href="#" class="card-post__category badge badge-pill badge-info">Cartera: <?php echo $row2['nombreCartera']; ?></a>
                                  
                                  </div>
                                  <div class="card-body">
@@ -344,8 +387,15 @@ include('header.php');
                            ?>  
                            <div class="col-lg-6 col-sm-12 mb-4">
                                <div class="card card-small card-post card-post--aside card-post--1">
-                                 <div class="card-post__image" style="background-image: url('images/content-management/5.jpeg');">
-                                   <a href="#" class="card-post__category badge badge-pill badge-info">Cartera: <?php echo $row2['nombreCartera']; ?></a>
+                               <? if ($row2['foto'] =="")
+                                {
+                                  echo "<div class=\"card-post__image\" scr=\" echo $row2[foto]\">";
+
+                                }
+
+                                else
+                                echo  "<div class=\"card-post__image\" style=\"background-image: url('../images/child.png');\">";
+                                ?>                                   <a href="#" class="card-post__category badge badge-pill badge-info">Cartera: <?php echo $row2['nombreCartera']; ?></a>
                                  
                                  </div>
                                  <div class="card-body">
@@ -395,8 +445,15 @@ include('header.php');
                            ?>  
                            <div class="col-lg-6 col-sm-12 mb-4">
                                <div class="card card-small card-post card-post--aside card-post--1">
-                                 <div class="card-post__image" style="background-image: url('images/content-management/5.jpeg');">
-                                   <a href="#" class="card-post__category badge badge-pill badge-info">Cartera: <?php echo $row2['nombreCartera']; ?></a>
+                               <? if ($row2['foto'] =="")
+                                {
+                                  echo "<div class=\"card-post__image\" scr=\" echo $row2[foto]\">";
+
+                                }
+
+                                else
+                                echo  "<div class=\"card-post__image\" style=\"background-image: url('../images/child.png');\">";
+                                ?>                                   <a href="#" class="card-post__category badge badge-pill badge-info">Cartera: <?php echo $row2['nombreCartera']; ?></a>
                                  
                                  </div>
                                  <div class="card-body">
@@ -444,8 +501,15 @@ include('header.php');
                            ?>  
                            <div class="col-lg-6 col-sm-12 mb-4">
                                <div class="card card-small card-post card-post--aside card-post--1">
-                                 <div class="card-post__image" style="background-image: url('images/content-management/5.jpeg');">
-                                   <a href="#" class="card-post__category badge badge-pill badge-info">Cartera: <?php echo $row2['nombreCartera']; ?></a>
+                               <? if ($row2['foto'] =="")
+                                {
+                                  echo "<div class=\"card-post__image\" scr=\" echo $row2[foto]\">";
+
+                                }
+
+                                else
+                                echo  "<div class=\"card-post__image\" style=\"background-image: url('../images/child.png');\">";
+                                ?>                                   <a href="#" class="card-post__category badge badge-pill badge-info">Cartera: <?php echo $row2['nombreCartera']; ?></a>
                                  
                                  </div>
                                  <div class="card-body">
