@@ -44,7 +44,9 @@ if(!isset($_SESSION['usuario']) and $_SESSION['estado'] != 'Autenticado') {
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <style>
-
+.card-post--1.card-post--aside .card-body {
+    padding: 2.5625rem 1.5625rem !important;
+}
 .table td, .table th {
   padding: .05rem !important;
 }  
