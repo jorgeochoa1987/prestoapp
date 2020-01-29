@@ -118,7 +118,7 @@ include('header.php');
                             <div class="form-row">
                               <div class="form-group col-md-12">
                                 <label for="feDescription">Notas</label>
-                                <textarea class="form-control" name="feDescription" id="feDescription" rows="5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae minima obcaecati quod dolorum sint alias, possimus illum assumenda eligendi cumque?</textarea>
+                                <textarea class="form-control" name="feDescription" id="feDescription" rows="5"></textarea>
                               </div>
                             </div>
                             <button type="submit" id="crearPrestamo" class="btn btn-accent">Crear</button>
