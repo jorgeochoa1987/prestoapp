@@ -76,7 +76,7 @@ include('header.php');
                             <div class="col-lg-6 col-sm-12 mb-4">
                                 <div class="card card-small card-post card-post--aside card-post--1">
                                
-                                <div class="card-post__image" style="background-image: url(https://javierperezb.com/images/child')">
+                                <div class="card-post__image" style="background-image: url('https://javierperezb.com/images/child.png') !important;">
                                  <a href="#" class="card-post__category badge badge-pill badge-info">Cartera: <?php echo $row2['nombreCartera']; ?></a>
                                   
                                   </div>
@@ -122,7 +122,7 @@ include('header.php');
                            ?>  
                            <div class="col-lg-6 col-sm-12 mb-4">
                                <div class="card card-small card-post card-post--aside card-post--1">
-                               <div class="card-post__image" style="background-image: url(https://javierperezb.com/images/child')">
+                               <div class="card-post__image" style="background-image: url('https://javierperezb.com/images/child.png') !important;">
                                 <a href="#" class="card-post__category badge badge-pill badge-info">Cartera: <?php echo $row2['nombreCartera']; ?></a>
                                  
                                  </div>
@@ -165,7 +165,7 @@ include('header.php');
                            ?>  
                            <div class="col-lg-6 col-sm-12 mb-4">
                                <div class="card card-small card-post card-post--aside card-post--1">
-                               <div class="card-post__image" style="background-image: url(https://javierperezb.com/images/child')">
+                               <div class="card-post__image" style="background-image: url('https://javierperezb.com/images/child.png') !important;">
                                  <a href="#" class="card-post__category badge badge-pill badge-info">Cartera: <?php echo $row2['nombreCartera']; ?></a>
                                  
                                  </div>
@@ -210,7 +210,7 @@ include('header.php');
                            ?>  
                            <div class="col-lg-6 col-sm-12 mb-4">
                                <div class="card card-small card-post card-post--aside card-post--1">
-                               <div class="card-post__image" style="background-image: url(https://javierperezb.com/images/child')">
+                               <div class="card-post__image"style="background-image: url('https://javierperezb.com/images/child.png') !important;">
                                    <a href="#" class="card-post__category badge badge-pill badge-info">Cartera: <?php echo $row2['nombreCartera']; ?></a>
                                  
                                  </div>
@@ -255,7 +255,7 @@ include('header.php');
                            ?>  
                            <div class="col-lg-6 col-sm-12 mb-4">
                                <div class="card card-small card-post card-post--aside card-post--1">
-                               <div class="card-post__image" style="background-image: url(https://javierperezb.com/images/child')">
+                               <div class="card-post__image" style="background-image: url('https://javierperezb.com/images/child.png') !important;">
                                   <a href="#" class="card-post__category badge badge-pill badge-info">Cartera: <?php echo $row2['nombreCartera']; ?></a>
                                  
                                  </div>
@@ -300,7 +300,7 @@ include('header.php');
                            ?>  
                            <div class="col-lg-6 col-sm-12 mb-4">
                                <div class="card card-small card-post card-post--aside card-post--1">
-                               <div class="card-post__image" style="background-image: url(https://javierperezb.com/images/child')">
+                               <div class="card-post__image" style="background-image: url('https://javierperezb.com/images/child.png') !important;">
                                    <a href="#" class="card-post__category badge badge-pill badge-info">Cartera: <?php echo $row2['nombreCartera']; ?></a>
                                  
                                  </div>
@@ -345,7 +345,7 @@ include('header.php');
                            ?>  
                            <div class="col-lg-6 col-sm-12 mb-4">
                                <div class="card card-small card-post card-post--aside card-post--1">
-                               <div class="card-post__image" style="background-image: url(https://javierperezb.com/images/child')">
+                               <div class="card-post__image" style="background-image: url('https://javierperezb.com/images/child.png') !important;">
 
                                  </div>
                                  <div class="card-body">
@@ -395,7 +395,7 @@ include('header.php');
                            ?>  
                            <div class="col-lg-6 col-sm-12 mb-4">
                                <div class="card card-small card-post card-post--aside card-post--1">
-                               <div class="card-post__image" style="background-image: url(https://javierperezb.com/images/child')">
+                               <div class="card-post__image"style="background-image: url('https://javierperezb.com/images/child.png') !important;">
                                   <a href="#" class="card-post__category badge badge-pill badge-info">Cartera: <?php echo $row2['nombreCartera']; ?></a>
                                  
                                  </div>
@@ -444,7 +444,7 @@ include('header.php');
                            ?>  
                            <div class="col-lg-6 col-sm-12 mb-4">
                                <div class="card card-small card-post card-post--aside card-post--1">
-                               <div class="card-post__image" style="background-image: url(https://javierperezb.com/images/child')">
+                               <div class="card-post__image" style="background-image: url('https://javierperezb.com/images/child.png') !important;">
                                    <a href="#" class="card-post__category badge badge-pill badge-info">Cartera: <?php echo $row2['nombreCartera']; ?></a>
                                  
                                  </div>
