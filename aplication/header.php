@@ -85,6 +85,14 @@ if(!isset($_SESSION['usuario']) and $_SESSION['estado'] != 'Autenticado') {
    
 }
 }
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi){
+[type=reset], [type=submit], button, html [type=button] 
+{
+
+    padding: 2px !important; 
+  }
+}
   </style>
    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.snow.css"> </head>
