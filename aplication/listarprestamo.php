@@ -30,9 +30,9 @@ include('header.php');
                 <div class="card card-small mb-4">
                   <div class="card-header border-bottom">
                     <h6 class="m-0">Cartera de :  <?php echo $row['nombre']; ?>  Cédula: id: <?php echo $row['cedula']; ?>  </h6> 
-                    <h6 class="m-0" style="float: right;" >Monto por cobrar :  <?php  $query3="SELECT sum(c.prestamo) as moneysum FROM cuenta as c  join cliente as cl  on c.id_cliente = cl.id where id_prestamista =  $id ";
+                    <h6 class="m-0" style="float: right;" >Monto por cobrar :  <?php  $query3="SELECT sum(c.valorPagar) as moneysum FROM cuenta as c  join cliente as cl  on c.id_cliente = cl.id where id_prestamista =  $id ";
                           $answer3 = $conexion -> query($query3);   while ($row3=$answer3->fetch_assoc()){
-                            ?>  <?php echo $row3['moneysum']; echo' Sin interes' ; ?> </h6>
+                            ?>  $ <?php echo $row3['moneysum'] ; ?> </h6>
                             <?php 
                           }
 
@@ -47,7 +47,6 @@ include('header.php');
                           <th scope="col" class="border-0">Nombre</th>
                           <th scope="col" class="border-0">Apellido</th>
                           <th scope="col" class="border-0">Telefono</th>
-                          <th scope="col" class="border-0">Correo</th>
                           <th scope="col" class="border-0">Prestado</th>
                           <th scope="col" class="border-0">Pagar</th>
                         </tr>
@@ -71,7 +70,6 @@ include('header.php');
                             <th scope="col" class="border-0"><?php echo $row2['name']; ?></th>
                              <th scope="col" class="border-0"><?php echo $row2['lastname']; ?></th>
                              <th scope="col" class="border-0"><?php echo $row2['phone']; ?></th>
-                             <th scope="col" class="border-0"><?php echo $row2['mail']; ?></th>
                              <th scope="col" class="border-0"><?php echo $row2['money']; ?></th>
                            
                              <td> <a class="btn btn-sm btn-success mr-1" href="modpago.php?id=<?php echo $row2 ['idcliente'];?>">Pagar </a></td>
