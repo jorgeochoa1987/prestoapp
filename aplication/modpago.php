@@ -184,7 +184,7 @@ include('header.php');
                              
                                
                                
-                                       echo  $rown['valordepago'];
+                                       echo  $row['prestamo'] - $rown['valordepago']  ;
                               
                             }
                             ?>
