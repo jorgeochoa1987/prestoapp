@@ -494,7 +494,7 @@ success: function(response){
   var valor = $('#feValue').val();
   
   $.ajax({
-    url: 'modules/crearPago.php',
+    url: 'modules/crearpago.php',
     type: 'POST',
     data: {
       'save': 1,
