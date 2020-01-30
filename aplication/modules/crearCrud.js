@@ -504,10 +504,9 @@ success: function(response){
       'valor':valor,
     
     },
-    error: function()
+    error: function(response)
     {
-      
-      swal("error!");
+      swal("error!", response);
     },
     beforeSend: function()
     {
