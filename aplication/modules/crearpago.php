@@ -6,7 +6,6 @@ if (isset($_POST['save'])) {
   $cartera= $_POST['cartera'];
   $valor = $_POST['valor'];
    
-
     if($cuenta=='')
     {
       $Respuesta = 'No encontramos el # de cuenta';
