@@ -151,14 +151,22 @@ include('header.php');
                         <th scope="col" class="border-0">#</th>
                            <th scope="col" class="border-0">Valor</th>
                           <th scope="col" class="border-0">Cartera</th>
-                          <th scope="col" class="border-0">Fecha</th>
+                          <th scope="col" class="border-0">Prestamo</th>
+                          <th scope="col" class="border-0">Saldo</th>
+
+                          <th scope="col" class="border-0">Ultimo pago</th>
                         </tr>
                       </thead>
                       <tbody>
                       <?php 
                           require('../conex/conexion.php');
                           $id = $_GET['id']; 
-                          $query="SELECT pg.id as id, pg.valor as valor, pg.id_cartera as cartera, pg.fechaPago as fechaPago, cr.nombre as ncartera FROM pago as pg join cartera as cr on pg.id_cartera = cr.id  where pg.id_cliente = $id ";
+                          $query="SELECT cuenta.prestamo as prestamo, pg.id as id, pg.valor as valor,sum(pg.valor)as total, pg.id_cartera as cartera, pg.fechaPago as fechaPago, cr.nombre as ncartera FROM pago as pg join cartera as cr on pg.id_cartera = cr.id
+                          join cuenta as cuenta 
+                          on pg.id_cuenta = cuenta.id
+                          where pg.id_cliente = $id 
+                          group by pg.id_cuenta
+                          ";
                           $answer = $conexion -> query($query);
                           while ($row=$answer->fetch_assoc()){
                           ?>
@@ -166,6 +174,8 @@ include('header.php');
                               <td> <?php echo $row['id']; ?></td>
                               <td>$ <?php echo $row['valor']; ?></td>
                               <td> <?php echo $row['ncartera']; ?></td>
+                              <td> <?php echo $row['prestamo']; ?></td>
+                              <td> <?php echo $row['prestamo']-$row['total'] ; ?></td>
                               <td> <?php echo $row['fechaPago']; ?></td>
                               </tr>
                           <?php 

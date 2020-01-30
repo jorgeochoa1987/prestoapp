@@ -54,7 +54,20 @@ include('header.php');
   <div class="card card-small mb-12 pt-3">
                   <div class="card-header border-bottom text-center" style="border-radius: 14px;">
                     <div class="mb-3 mx-auto">
-                    <h4 class="mb-0">¿ Desea pagar la cuota de : <?php   $id = $_GET['id']; echo $id; ?> ?</h4>
+                    <?php 
+                          require('../conex/conexion.php');
+                          $id = $_GET['idcl'];
+                          $query6="SELECT * from cliente where id =  $id";
+                          $answer6 = $conexion -> query($query6);
+                          while ($row6=$answer6->fetch_assoc()){
+                          ?>
+                    <h4 class="mb-0">¿ Desea pagar la cuota de : <?php echo $row6['nombre'] ?> ?</h4>
+                 
+                    <?php 
+                          }
+                          ?>    <!-- Si es día  cobro  4  veces  al mes -->
+                         
+
                     <span class="text-muted d-block mb-2"><a href="modpago.php?id=<?php $id = $_GET['idcl'];echo $id;?>">Volver a la lista de prestamo </a></span>
                   </div>
                   <ul class="list-group list-group-flush">
