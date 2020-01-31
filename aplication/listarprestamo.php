@@ -69,7 +69,7 @@ include('header.php');
                             <th scope="col" class="border-0"> <?php echo $row2['ident']; ?></th>
                             <th scope="col" class="border-0"><?php echo $row2['name']; ?></th>
                              <th scope="col" class="border-0"><?php echo $row2['lastname']; ?></th>
-                             <th scope="col" class="border-0"><?php echo $row2['phone']; ?></th>
+                             <th scope="col" class="border-0">$ <?php echo $row2['phone']; ?></th>
                              <th scope="col" class="border-0"><?php echo $row2['money']; ?></th>
                            
                              <td> <a class="btn btn-sm btn-success mr-1" href="modpago.php?id=<?php echo $row2 ['idcliente'];?>">Pagar </a></td>
