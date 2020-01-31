@@ -161,7 +161,7 @@ include('header.php');
                       <?php 
                           require('../conex/conexion.php');
                           $id = $_GET['id']; 
-                          $query="SELECT cuenta.id as idcu, cuenta.prestamo as prestamo, pg.id as id, pg.valor as valor, pg.id_cartera as cartera, pg.fechaPago as fechaPago, cr.nombre as ncartera FROM pago as pg join cartera as cr on pg.id_cartera = cr.id
+                          $query="SELECT cuenta.id as idcu, cuenta.prestamo as prestamo,cuenta.valorPagar as valorPagar, pg.id as id, pg.valor as valor, pg.id_cartera as cartera, pg.fechaPago as fechaPago, cr.nombre as ncartera FROM pago as pg join cartera as cr on pg.id_cartera = cr.id
                           join cuenta as cuenta 
                           on pg.id_cuenta = cuenta.id
                           where pg.id_cliente = $id 
