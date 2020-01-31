@@ -173,7 +173,7 @@ include('header.php');
                               <td> <?php echo $row['idcu']; ?></td>
                               <td>$ <?php echo $row['valor']; ?></td>
                               <td> <?php echo $row['ncartera']; ?></td>
-                              <td> <?php echo $row['prestamo']; ?></td>
+                              <td> <?php echo $row['valorPagar']; ?></td>
                               <td> <?php 
                               $idcuenta =$row['idcu'];
                                require('../conex/conexion.php');
@@ -184,7 +184,7 @@ include('header.php');
                              
                                
                                
-                                       echo  $row['prestamo'] - $rown['valordepago']  ;
+                                       echo  $row['valorPagar'] - $rown['valordepago']  ;
                               
                             }
                             ?>
