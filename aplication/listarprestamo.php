@@ -54,7 +54,7 @@ include('header.php');
                       <tbody>
                       <?php 
                      
-                      $query2="SELECT c.id_cliente as idcliente, c.id as ident, cl.nombre as name, cl.apellido as lastname,sum(c.prestamo) as money,cl.telefono as phone, cl.correo as mail  FROM cuenta as c  join cliente as cl  on c.id_cliente = cl.id where id_prestamista = $id group by c.id_cliente";
+                      $query2="SELECT c.id_cliente as idcliente, c.id as ident, cl.nombre as name, cl.apellido as lastname,sum(c.valorPagar) as money,cl.telefono as phone, cl.correo as mail  FROM cuenta as c  join cliente as cl  on c.id_cliente = cl.id where id_prestamista = $id group by c.id_cliente";
                           $answer2 = $conexion -> query($query2);
                          
                           while ($row2=$answer2->fetch_assoc()){
