@@ -89,7 +89,7 @@ include('header.php');
                             $valor = $row['valor'];
                             $cantidad = 1;
                             $meses = $row['mes'];
-                            $total = $valor / $meses;
+                            $total = round( $valor / $meses, 2);
                              echo  "<label for=\"feValue\">Valor a pagar </label> <input type=\"text\" class=\" form-control\" onkeyup=\"copiar()\" id=\"feValue\" placeholder=\"Valor\" value=\" $total\"> </div>";
 
                           }?>
@@ -99,7 +99,7 @@ include('header.php');
                             $valor = $row['valor'];
                             $cantidad = 2;
                             $meses =  $row['Cantidadmes']; 
-                            $total = ($valor/ $meses)/$cantidad;
+                            $total = round(($valor/ $meses)/$cantidad,2);
                             echo  "<label for=\"feValue\">Valor a pagar </label> 
                             <div class=\"input-group mb-3\">
                           <div class=\"input-group-prepend\">
@@ -122,7 +122,7 @@ include('header.php');
                               $valor = $row['valor'];
                               $cantidad = 30;
                               $meses =  $row['Cantidadmes']; 
-                              $total = ($valor/ $meses)/$cantidad;
+                              $total = round(($valor/ $meses)/$cantidad,2);
                               echo  "<label for=\"feValue\">Valor a pagar </label> <input type=\"text\" class=\" form-control\" onkeyup=\"copiar()\" id=\"feValue\" placeholder=\"Valor\" value=\" $total\"> </div>";
                             }
                             else
@@ -130,7 +130,7 @@ include('header.php');
                               $valor = $row['valor'];
                               $cantidad = $semana  * 4;
                               $meses =  $row['Cantidadmes']; 
-                              $total = ($valor/ $meses)/$cantidad;
+                              $total = round(($valor/ $meses)/$cantidad,2);
                               echo  "<label for=\"feValue\">Valor a pagar </label> <input type=\"text\" class=\" form-control\" onkeyup=\"copiar()\" id=\"feValue\" placeholder=\"Valor\" value=\" $total\"> </div>";
                         
                             }
