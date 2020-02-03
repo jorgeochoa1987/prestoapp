@@ -231,11 +231,10 @@ swal("¡Buen trabajo!", response, "success");
 //////////////////////////////////////////////////////////////////////////
 //Borrar cliente
 
-$(document).on('click', '#borrarCliente', function(){
+$(document).on('click', '.borrarcl',function (){
   // Capturo los id de  los inputs y los paso a la variables para que procese
-//alert('entre a crear cliente');
-var id = $('#feid').val();
-
+//alert('entre a crear cliente'); 
+var id = this.id;
 $.ajax({
   url: 'modules/BorrarCliente.php',
   type: 'POST',
@@ -259,7 +258,7 @@ swal("Un momento por favor");
 success: function(response){
   swal({
     title: "¿Estás seguro?",
-    text: "¡Deseas borrar el cliente seleccionado!",
+    text: "¡Deseas borrar el cliente con id de: ("+id+")",
     type: "warning",
     showCancelButton: true,
     confirmButtonColor: "#DD6B55",
@@ -283,9 +282,9 @@ success: function(response){
 }
 
   
+});
+});
 
-});
-});
 
 //crear prestamo
 

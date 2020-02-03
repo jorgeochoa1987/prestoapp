@@ -47,7 +47,8 @@ include('header.php');
                               <td> <?php echo $row['cedula']; ?></td>
                             
                               <td>  <a href="modCliente.php?id=<?php echo $row ['id'];?>"><button type="button" class="mb-2 btn btn-sm btn-info mr-1">Modificar</button> </a></td>
-                              <td>  <input type="text" class="form-control" id="feid"  value="<?php echo $row ['id'];?>" hidden >  <button type="button" id="borrarCliente" class="mb-2 btn btn-sm btn-danger mr-1"><i class="material-icons">delete</i> Borrar</button>  
+                              <td> 
+                              <button type="button" id="<?php echo $row ['id'];?>" class="borrarcl mb-2 btn btn-sm btn-danger mr-1"><i class="material-icons">delete</i> Borrar</button>  
                           </tr>
                         
 
