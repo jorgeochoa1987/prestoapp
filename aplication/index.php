@@ -44,7 +44,7 @@ include('header.php');
                   <div class="card-body p-0 d-flex">
                     <div class="d-flex flex-column m-auto">
                       <div class="stats-small__data text-center">
-                        <span class="stats-small__label text-uppercase">Cartera recupera hoy de: <?php echo $row['nombre']; ?> </span>
+                        <span class="stats-small__label text-uppercase">Cartera recuperada hoy de: <?php echo $row['nombre']; ?> </span>
                         <h6 class="stats-small__value count my-3">$ <?php echo $row['valor']; ?></h6>
                       </div>
                       <div class="stats-small__data">
