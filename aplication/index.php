@@ -25,11 +25,17 @@ include('header.php');
             <!-- Small Stats Blocks -->
    <div class="row">
             <?php 
+
                           require('../conex/conexion.php');
-                          $query="SELECT sum(pg.valor) as valor, ct.nombre  as nombre
-                          FROM `cartera` as ct
-                          JOIN `pago` as pg 
-                          ON ct.id = pg.id_cartera ";
+                          $fechaini =date("Y-m-d");
+                          $fecha = $fechaini. " 01:48:10";
+                          $fechafin =  $fechaini." 23:48:10";
+                          $query="select  SUM(pg.valor) as valor, ct.nombre as nombre
+                          from pago as pg
+                          join cartera as ct
+                          on pg.id_cartera = ct.id
+                          where pg.fechaPago >='$fecha' and  pg.fechaPago  < '$fechafin'
+                          group by pg.id_cartera ";
                           $answer = $conexion -> query($query);
                           while ($row=$answer->fetch_assoc()){
                           ?>
@@ -38,8 +44,8 @@ include('header.php');
                   <div class="card-body p-0 d-flex">
                     <div class="d-flex flex-column m-auto">
                       <div class="stats-small__data text-center">
-                        <span class="stats-small__label text-uppercase">Cartera de: <?php echo $row['nombre']; ?> </span>
-                        <h6 class="stats-small__value count my-3"><?php echo $row['valor']; ?></h6>
+                        <span class="stats-small__label text-uppercase">Cartera recupera hoy de: <?php echo $row['nombre']; ?> </span>
+                        <h6 class="stats-small__value count my-3">$ <?php echo $row['valor']; ?></h6>
                       </div>
                       <div class="stats-small__data">
                       </div>
