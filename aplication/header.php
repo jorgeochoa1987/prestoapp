@@ -48,7 +48,7 @@ if(!isset($_SESSION['usuario']) and $_SESSION['estado'] != 'Autenticado') {
     padding: 2.5625rem 1.5625rem !important;
 }
 .table td, .table th {
-  padding: .05rem !important;
+  padding: .55rem !important;
 }  
   .promo-popup.hidden {
     bottom: -73% !important;
@@ -96,7 +96,48 @@ if(!isset($_SESSION['usuario']) and $_SESSION['estado'] != 'Autenticado') {
   }
 }
   </style>
-   
+<script type="text/javascript">
+       (function(document) {
+      'use strict'; 
+
+      var LightTableFilter = (function(Arr) {
+
+        var _input;
+
+        function _onInputEvent(e) {
+          _input = e.target;
+          var tables = document.getElementsByClassName(_input.getAttribute('data-table'));
+          Arr.forEach.call(tables, function(table) {
+            Arr.forEach.call(table.tBodies, function(tbody) {
+              Arr.forEach.call(tbody.rows, _filter);
+            });
+          });
+        }
+
+        function _filter(row) {
+          var text = row.textContent.toLowerCase(), val = _input.value.toLowerCase();
+          row.style.display = text.indexOf(val) === -1 ? 'none' : 'table-row';
+        }
+
+        return {
+          init: function() {
+            var inputs = document.getElementsByClassName('light-table-filter');
+            Arr.forEach.call(inputs, function(input) {
+              input.oninput = _onInputEvent;
+            });
+          }
+        };
+      })(Array.prototype);
+
+      document.addEventListener('readystatechange', function() {
+        if (document.readyState === 'complete') {
+          LightTableFilter.init();
+        }
+      });
+
+    })(document);
+ 
+   </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.snow.css"> </head>
   </head>
   <body class="h-100">
@@ -162,12 +203,7 @@ if(!isset($_SESSION['usuario']) and $_SESSION['estado'] != 'Autenticado') {
                   <span>Listas  prestamos</span>
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link " href="listarcliente.php">
-                  <i class="material-icons">money_off</i>
-                  <span>Prestamos vencidos</span>
-                </a>
-              </li>
+              
               <li class="nav-item">
                 <a class="nav-link " href="#">
                   <i class="material-icons">label</i>

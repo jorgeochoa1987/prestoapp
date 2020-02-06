@@ -44,7 +44,7 @@ include('header.php');
                   </ul>
                 </div>
               </div>
-              <div class="col-lg-7">
+              <div class="col-lg-9">
                 <div class="card card-small mb-4">
                   <div class="card-header border-bottom">
                     <h6 class="m-0">Información básica</h6>
@@ -64,8 +64,8 @@ include('header.php');
                             </div>
                             <div class="form-row">
                               <div class="form-group col-md-6">
-                                <label for="feEmailAddress">Correo</label>
-                                <input type="email" class="form-control" id="feEmailAddress" placeholder="Correo@correo.com" value=""> </div>
+                                <label for="feEmailAddress">Dirección de cobro</label>
+                                <input type="text" class="form-control" id="feEmailAddress" placeholder="Dirección de cobro" value=""> </div>
                               <div class="form-group col-md-6">
                               <label for="feInputAddress">Teléfono</label>
                               <input type="text" class="form-control" id="fephone" placeholder="Ingrese teléfono"> </div>
@@ -97,9 +97,7 @@ include('header.php');
                   </ul>
                 </div>
               </div>
-              <div class='card card-small col-lg-3'>
-               
-            </div>
+              
             <!-- End Page Header -->
           </div>
           <?php

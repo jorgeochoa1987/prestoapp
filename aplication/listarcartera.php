@@ -8,7 +8,7 @@ include('header.php');
             <div class="page-header row no-gutters py-4">
               <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
                 <span class="text-uppercase page-subtitle">Listado</span>
-                <h3 class="page-title">Usuario con cartera</h3>
+                <h3 class="page-title">Usuario con cartera</h3> 
               </div>
             </div>
             <!-- End Page Header -->
@@ -17,10 +17,10 @@ include('header.php');
               <div class="col">
                 <div class="card card-small mb-4">
                   <div class="card-header border-bottom">
-                    <h6 class="m-0">Carteras Activas</h6>
+                    <h6 class="m-0">Carteras Activas</h6><input class="form-control col-md-3 light-table-filter" data-table="order-table" type="text" placeholder="Buscar..">
                   </div>
                   <div class="card-body p-0 pb-3 text-center">
-                    <table class="table mb-0">
+                    <table class="table mb-0 order-table">
                       <thead class="bg-light">
                         <tr>
                           <th scope="col" class="border-0">#</th>

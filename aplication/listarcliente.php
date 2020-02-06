@@ -17,10 +17,11 @@ include('header.php');
               <div class="col">
                 <div class="card card-small mb-4">
                   <div class="card-header border-bottom">
-                    <h6 class="m-0">Clientes Activos</h6>
+                    <h6 class="m-0">Clientes Activos</h6>      <input class="form-control col-md-3 light-table-filter" data-table="order-table" type="text" placeholder="Buscar..">
+
                   </div>
                   <div class="card-body p-0 pb-3 text-center">
-                    <table class="table mb-0">
+                    <table class="table mb-0 order-table">
                       <thead class="bg-light">
                         <tr>
                           <th scope="col" class="border-0">#</th>
@@ -78,7 +79,7 @@ include('header.php');
                           <th scope="col" class="border-0">Apellido</th>
                           <th scope="col" class="border-0">Dirección</th>
                           <th scope="col" class="border-0">Teléfono</th>
-                          <th scope="col" class="border-0">Correo</th>
+                          <th scope="col" class="border-0">Dir Cobro</th>
                           <th scope="col" class="border-0">Favorito</th>
                           <th scope="col" class="border-0">Modificar</th>
                           <th scope="col" class="border-0">Eliminar</th>

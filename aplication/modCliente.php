@@ -90,7 +90,7 @@ include('header.php');
                   </ul>
                 </div>
               </div>
-              <div class="col-lg-7">
+              <div class="col-lg-9">
                 <div class="card card-small mb-4">
                   <div class="card-header border-bottom">
                     <h6 class="m-0">Información básica</h6>
@@ -111,8 +111,8 @@ include('header.php');
                             </div>
                             <div class="form-row">
                               <div class="form-group col-md-6">
-                                <label for="feEmailAddress">Correo</label>
-                                <input type="email" class="form-control" id="feEmailAddress" placeholder="Correo@correo.com" value="<?php echo $row2['correo'] ; ?>"> </div>
+                                <label for="feEmailAddress">Dirección de cobro</label>
+                                <input type="text" class="form-control" id="feEmailAddress" placeholder="Dirección de cobro" value="<?php echo $row2['correo'] ; ?>"> </div>
                               <div class="form-group col-md-6">
                               <label for="feInputAddress">Teléfono</label>
                               <input type="text" class="form-control" id="fephone" placeholder="Ingrese teléfono" value="<?php echo $row2['telefono'] ; ?>"> </div>
@@ -146,49 +146,7 @@ include('header.php');
                   </ul>
                 </div>
               </div>
-              <div class='card card-small col-lg-3'>
-                  <div class="card-header border-bottom">
-                    <h6 class="m-0">Días de cobro</h6>
-                  </div>
-                  <div class='card-body p-0'>
-                    <ul class="list-group list-group-flush">
-                      <li class="list-group-item px-3 pb-2">
-                        <div class="custom-control custom-checkbox mb-1">
-                          <input type="checkbox" class="custom-control-input" id="category1" value="1" checked>
-                          <label class="custom-control-label" for="category1">Lunes</label>
-                        </div>
-                        <div class="custom-control custom-checkbox mb-1">
-                          <input type="checkbox" class="custom-control-input" value="1"  id="category2" >
-                          <label class="custom-control-label" for="category2">Martes</label>
-                        </div>
-                        <div class="custom-control custom-checkbox mb-1">
-                          <input type="checkbox" class="custom-control-input" value="1"   id="category3">
-                          <label class="custom-control-label" for="category3">Miercoles</label>
-                        </div>
-                        <div class="custom-control custom-checkbox mb-1">
-                          <input type="checkbox" class="custom-control-input" value="1"   id="category4">
-                          <label class="custom-control-label" for="category4">Jueves</label>
-                        </div> 
-                        <div class="custom-control custom-checkbox mb-1">
-                          <input type="checkbox" class="custom-control-input" value="1"  id="category5">
-                          <label class="custom-control-label" for="category5">Viernes</label>
-                        </div>
-                        <div class="custom-control custom-checkbox mb-1">
-                          <input type="checkbox" class="custom-control-input" value="1"  id="category6">
-                          <label class="custom-control-label" for="category6">Sabado</label>
-                        </div>
-                        <div class="custom-control custom-checkbox mb-1">
-                          <input type="checkbox" class="custom-control-input" value="1"  id="category7">
-                          <label class="custom-control-label" for="category7">Domingo</label>
-                        </div>
-                      </li>
-                      <li class="list-group-item d-flex px-3">
-                      
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-            </div>
+              
             <!-- End Page Header -->
           </div>
           <input type="text" hidden class="form-control" id="feid" placeholder="Ingrese nombre" value="<?php   $id = $_GET['id']; echo $id; ?>">
