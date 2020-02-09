@@ -427,6 +427,53 @@ $.ajax({
 });
 
 
+//Actualizar cartera
+
+$(document).on('click', '#crearGasto', function(){
+  // Capturo los id de  los inputs y los paso a la variables para que procese
+//alert('entre a crear cliente');
+var notes = $('#fenotes').val();
+var fecha = $('#fedate').val();
+var valor = $('#feValue').val();
+
+$.ajax({
+  url: 'modules/crearGasto.php',
+  type: 'POST',
+  data: {
+    'save': 1,
+    'notes': notes,
+    'fecha': fecha,
+    'valor': valor,
+  },
+     //mensaje de error
+     error: function(response)
+     {
+ swal("! error al crear gasto !  ", response);
+    }, 
+ // Si se demora muestra el mensaje de espera
+ beforeSend: function()
+   {
+ swal("Un momento por favor");
+  },
+ //si todo sale bien  
+ success: function(response){
+   
+
+  $("#Respuesta").html(response);
+ swal("Creado el gasto!", response, "success"),
+    $('#fenotes').val(''),
+    $('#feValue').val(''),
+  
+ function(isConfirm)
+    {
+   if(isConfirm){
+  window.location.href="listarcartera.php";}
+    }
+ }
+
+});
+});
+
 
 //Borrar cliente
 

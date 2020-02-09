@@ -6,8 +6,9 @@ function copiar()
   
   var valor  = document.getElementById("feValue").value; 
   var interes =document.getElementById("feInteres").value;
+  var meses = document.getElementById("mesespago").value;
   var totalinteres = interes *( valor / 100) ;
-  var total =  parseInt(valor) + parseInt(totalinteres);
+  var total =  parseInt(valor) + parseInt(totalinteres) * parseInt(meses);
 
   document.getElementById("fevalorapagarVer").value= total;
   document.getElementById("fevalorapagar").value= total;

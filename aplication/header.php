@@ -203,7 +203,18 @@ if(!isset($_SESSION['usuario']) and $_SESSION['estado'] != 'Autenticado') {
                   <span>Listas  prestamos</span>
                 </a>
               </li>
-              
+              <li class="nav-item">
+                <a class="nav-link " href="nuevogasto.php">
+                  <i class="material-icons">monetization_on</i>
+                  <span>Crear Gastos</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="listargastos.php">
+                  <i class="material-icons">monetization_on</i>
+                  <span>Listas Gastos</span>
+                </a>
+              </li>
               <li class="nav-item">
                 <a class="nav-link " href="#">
                   <i class="material-icons">label</i>
