@@ -15,8 +15,9 @@ include('header.php');
             <!-- Default Light Table -->
             <div class="row">
               <div class="col">
-                <div class="card card-small mb-4">
-                  <div class="card-header border-bottom">
+                <div class="card card-small mb-4" >                
+
+                  <div class="card-header border-bottom">   
                   <?php 
                           require('../conex/conexion.php');
                           $query="SELECT * FROM cartera group by cedula";
@@ -28,8 +29,9 @@ include('header.php');
                           <div class="row">
               <div class="col"> 
                 <div class="card card-small mb-4">
-                  <div class="card-header border-bottom">   <input class="form-control col-md-3 light-table-filter" data-table="order-table" type="text" placeholder="Buscar..">
-                    <h6 class="m-0">Cartera de :  <?php echo $row['nombre']; ?>  Cédula: id: <?php echo $row['cedula']; ?>  </h6> 
+                  <div class="card-header border-bottom">  
+                    <h6 class="m-0">   <input class="form-control col-md-3 light-table-filter" data-table="order-table" type="text" placeholder="Buscar..">
+                    Cartera de :  <?php echo $row['nombre']; ?>  Cédula: id: <?php echo $row['cedula']; ?>  </h6> 
                     <h6 class="m-0" style="float: right;" >Monto por cobrar :  <?php  $query3="SELECT sum(c.valorPagar) as moneysum FROM cuenta as c  join cliente as cl  on c.id_cliente = cl.id where id_prestamista =  $id ";
                           $answer3 = $conexion -> query($query3);   while ($row3=$answer3->fetch_assoc()){
                             ?>  $ <?php echo $row3['moneysum'] ; ?> </h6>
@@ -40,7 +42,7 @@ include('header.php');
 
                   </div>
                   <div class="card-body p-0 pb-3 text-center">
-                    <table class="table mb-0">
+                    <table class="table mb-0 order-table">
                       <thead class="bg-light">
                         <tr>
                           <th scope="col" class="border-0">#</th>
