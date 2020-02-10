@@ -26,9 +26,9 @@ include('header.php');
                           ?> 
                          <?php   $id =  $row['id']; ?>
                           <div class="row">
-              <div class="col">
+              <div class="col"> 
                 <div class="card card-small mb-4">
-                  <div class="card-header border-bottom">
+                  <div class="card-header border-bottom">   <input class="form-control col-md-3 light-table-filter" data-table="order-table" type="text" placeholder="Buscar..">
                     <h6 class="m-0">Cartera de :  <?php echo $row['nombre']; ?>  Cédula: id: <?php echo $row['cedula']; ?>  </h6> 
                     <h6 class="m-0" style="float: right;" >Monto por cobrar :  <?php  $query3="SELECT sum(c.valorPagar) as moneysum FROM cuenta as c  join cliente as cl  on c.id_cliente = cl.id where id_prestamista =  $id ";
                           $answer3 = $conexion -> query($query3);   while ($row3=$answer3->fetch_assoc()){
