@@ -161,10 +161,11 @@ include('header.php');
                       <?php 
                           require('../conex/conexion.php');
                           $id = $_GET['id']; 
+                          $prest = $_GET['prest'];
                           $query="SELECT cuenta.id as idcu, cuenta.prestamo as prestamo,cuenta.valorPagar as valorPagar, pg.id as id, pg.valor as valor, pg.id_cartera as cartera, pg.fechaPago as fechaPago, cr.nombre as ncartera FROM pago as pg join cartera as cr on pg.id_cartera = cr.id
                           join cuenta as cuenta 
                           on pg.id_cuenta = cuenta.id
-                          where pg.id_cliente = $id 
+                          where pg.id_cliente = $id  and cuenta.id_prestamista = $prest
                           ";
                           $answer = $conexion -> query($query);
                           while ($row=$answer->fetch_assoc()){
@@ -218,7 +219,8 @@ include('header.php');
                       <?php 
                           require('../conex/conexion.php');
                           $id = $_GET['id']; 
-                          $query="SELECT  ct.cuotas as numcoutas, ct.id as id, ct.valorPagar as prestamo, ct.interes as interes, cr.nombre as nombre FROM cuenta as ct join cartera as cr on ct.id_prestamista = cr.id  where id_cliente = $id ";
+                          $prest = $_GET['prest'];
+                          $query="SELECT  ct.cuotas as numcoutas, ct.id as id, ct.valorPagar as prestamo, ct.interes as interes, cr.nombre as nombre FROM cuenta as ct join cartera as cr on ct.id_prestamista = cr.id  where id_cliente = $id and ct.id_prestamista = $prest ";
                           $answer = $conexion -> query($query);
                           while ($row=$answer->fetch_assoc()){
                           ?>

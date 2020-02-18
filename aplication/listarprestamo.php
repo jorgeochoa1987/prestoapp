@@ -55,7 +55,7 @@ include('header.php');
                       <tbody>
                       <?php 
                      
-                      $query2="SELECT c.id_cliente as idcliente, c.id as ident, cl.nombre as name, cl.apellido as lastname,sum(c.valorPagar) as money,cl.telefono as phone, cl.correo as mail  FROM cuenta as c  join cliente as cl  on c.id_cliente = cl.id where id_prestamista = $id group by c.id_cliente";
+                      $query2="SELECT  id_prestamista as prestamista, c.id_cliente as idcliente, c.id as ident, cl.nombre as name, cl.apellido as lastname,sum(c.valorPagar) as money,cl.telefono as phone, cl.correo as mail  FROM cuenta as c  join cliente as cl  on c.id_cliente = cl.id where id_prestamista = $id group by c.id_cliente";
                           $answer2 = $conexion -> query($query2);
                          
                           while ($row2=$answer2->fetch_assoc()){
@@ -72,7 +72,7 @@ include('header.php');
                              <th scope="col" class="border-0"><?php echo $row2['lastname']; ?></th>
                              <th scope="col" class="border-0">$ <?php echo $row2['money']; ?></th>
                            
-                             <td> <a class="btn btn-sm btn-success mr-1" href="modpago.php?id=<?php echo $row2 ['idcliente'];?>">Pagar </a></td>
+                             <td> <a class="btn btn-sm btn-success mr-1" href="modpago.php?id=<?php echo $row2 ['idcliente'];?>&prest=<?php echo $row2['prestamista'];?>">Pagar </a></td>
  
                              </tr>
                              <?php
