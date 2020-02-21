@@ -232,6 +232,11 @@ if(!isset($_SESSION['usuario']) and $_SESSION['estado'] != 'Autenticado') {
                   <i class="material-icons">assignment</i>
                   <span>Reportes de clientes </span>
                 </a>
+                <li class="nav-item">
+                <a class="nav-link " href="reporte" target="_blank">
+                  <i class="material-icons">assignment</i>
+                  <span>Reportes x fecha  de hoy </span>
+                </a>
               </li>
 
               
